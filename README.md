@@ -4,7 +4,7 @@ Applied Program on Accelerated Learning and Bioinformatics (2026)
 
 ---
 
-[Go to Tutorials.](./docs/README.md)
+[Go to Tutorials.](./docs/01_00_overview.md)
 
 ---
 
@@ -91,7 +91,7 @@ Installation instructions are available here:
 
 ---
 
-[Go to Tutorials.](./docs/README.md)
+[Go to Tutorials.](./docs/01_00_overview.md)
 
 ---
 
