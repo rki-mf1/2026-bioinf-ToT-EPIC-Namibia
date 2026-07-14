@@ -1,6 +1,6 @@
 ---
 title: QUAST
-parent: Assembly QC
+parent: Assembly
 nav_order: 2
 nav_exclude: false
 has_children: false
