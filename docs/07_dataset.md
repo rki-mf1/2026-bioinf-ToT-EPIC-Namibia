@@ -1,4 +1,11 @@
-[⬅ Back to main page](../README.md)
+---
+title: Dataset
+nav_order: 7
+nav_exclude: false
+has_children: false
+has_toc: false
+permalink: /dataset/
+---
 
 # Downloading datasets
 
@@ -21,7 +28,7 @@ We will continue working in the same directory as before.
 
 ```bash
 # start from workshop directory
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 
 # activate conda environment
 conda activate sra-tools
@@ -61,11 +68,7 @@ do
 done
 
 # go back to workshop dir
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 ```
 
 ---
-
-[Next tutorial](./03_fastp.md)
-
-[⬅ Back to main page](../README.md)

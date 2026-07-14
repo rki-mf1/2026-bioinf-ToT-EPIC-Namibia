@@ -1,4 +1,11 @@
-[⬅ Back to main page](../README.md)
+---
+title: Conda
+nav_order: 6
+nav_exclude: false
+has_children: false
+has_toc: false
+permalink: /conda/
+---
 
 # Conda
 
@@ -176,7 +183,3 @@ In this practical, you used the following Conda commands:
 | `conda deactivate` | Leave the active environment |
 
 ---
-
-[Next tutorial](./02_downloading_dataset.md)
-
-[⬅ Back to main page](../README.md)

@@ -1,4 +1,9 @@
-[⬅ Back to main page](../README.md)
+---
+title: Linux - Viewing, Editing, Compressing, and Searching Files
+parent: Linux
+nav_order: 2
+nav_exclude: false
+---
 
 # Viewing, Editing, Compressing, and Searching Files
 
@@ -16,7 +21,7 @@ By the end of this lesson, you should be able to:
 Open a terminal and move into the workshop repository:
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 ```
 
 Create a safe practice area for this session:
@@ -109,7 +114,7 @@ zless ERR16718636.fna.gz
 Let's copy `amrfinderplus.tsv` in our current working directory to explore it:
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 cp data/tutorial_data/amrfinderplus.tsv scratch/
 cd scratch
 ```
@@ -231,7 +236,7 @@ wc -w amrfinderplus.tsv
 Create a directory for scripts:
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia/scratch
+cd ~/2026-bioinf-ToT-EPIC-Namibia/scratch
 mkdir -p scripts
 cd scripts
 ```
@@ -282,13 +287,13 @@ ls -lh
 Run it explicitly with Bash:
 
 ```bash
-bash create_project.sh ~/2026-Workshop-HSPA-Tunisia/scratch/scripts demo_project
+bash create_project.sh ~/2026-bioinf-ToT-EPIC-Namibia/scratch/scripts demo_project
 ```
 
 Run it directly:
 
 ```bash
-./create_project.sh ~/2026-Workshop-HSPA-Tunisia/scratch/scripts demo_project_2
+./create_project.sh ~/2026-bioinf-ToT-EPIC-Namibia/scratch/scripts demo_project_2
 
 # or
 
@@ -400,5 +405,3 @@ chmod +x if_else.sh
 | `./script.sh` | Run an executable script directly |
 
 ---
-
-[⬅ Back to main page](../README.md)

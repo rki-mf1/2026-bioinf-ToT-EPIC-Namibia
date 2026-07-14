@@ -1,4 +1,11 @@
-[⬅ Back to main page](../README.md)
+---
+title: Fastp
+nav_order: 8
+nav_exclude: false
+has_children: false
+has_toc: false
+permalink: /fastp/
+---
 
 # Quality control of Illumina paired-end reads with `fastp`
 
@@ -53,7 +60,7 @@ If the command prints a version number, the environment is ready.
 Move to the main workshop repository.
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 ```
 
 Create a working directory for this practical.
@@ -416,7 +423,3 @@ Key corrections from `fastplong`-style syntax to Illumina paired-end `fastp` syn
 | `--length_required 500` for short reads | a short-read threshold such as `--length_required 50` |
 
 ---
-
-[⬅ Back to Day 02 overview](README.md)
-
-[⬅ Back to main page](../README.md)

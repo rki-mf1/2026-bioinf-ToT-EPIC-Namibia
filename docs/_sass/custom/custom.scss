@@ -1,0 +1,66 @@
+// Restore the filled callout appearance used by Just the Docs v0.4.x.
+@mixin filled-callout($background-color, $accent-color, $opacity: 0.2) {
+  background: rgba($background-color, $opacity);
+  border: 0;
+  border-left: $border-radius solid $accent-color;
+}
+
+// Note and question
+.main-content p.note,
+.main-content blockquote.note,
+.main-content p.note-title,
+.main-content blockquote.note-title,
+.main-content p.question,
+.main-content blockquote.question,
+.main-content p.question-title,
+.main-content blockquote.question-title {
+  @include filled-callout($blue-000, $blue-300, 0.20);
+}
+
+// Tip and task
+.main-content p.tip,
+.main-content blockquote.tip,
+.main-content p.tip-title,
+.main-content blockquote.tip-title,
+.main-content p.task,
+.main-content blockquote.task,
+.main-content p.task-title,
+.main-content blockquote.task-title {
+  @include filled-callout($green-000, $green-300, 0.20);
+}
+
+// Important and discussion
+.main-content p.important,
+.main-content blockquote.important,
+.main-content p.important-title,
+.main-content blockquote.important-title,
+.main-content p.discussion,
+.main-content blockquote.discussion,
+.main-content p.discussion-title,
+.main-content blockquote.discussion-title {
+  @include filled-callout($purple-000, $purple-300, 0.20);
+}
+
+// Warning
+.main-content p.warning,
+.main-content blockquote.warning,
+.main-content p.warning-title,
+.main-content blockquote.warning-title {
+  @include filled-callout($yellow-000, $yellow-300, 0.25);
+}
+
+// Caution
+.main-content p.caution,
+.main-content blockquote.caution,
+.main-content p.caution-title,
+.main-content blockquote.caution-title {
+  @include filled-callout($red-000, $red-300, 0.20);
+}
+
+// Restore the borderless fenced-code appearance from Just the Docs v0.4.x.
+.main-content div.highlighter-rouge > div.highlight,
+.main-content div.listingblock > div.content,
+.main-content figure.highlight > pre,
+.main-content figure.highlight > code {
+  border: 0;
+}

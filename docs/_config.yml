@@ -1,0 +1,71 @@
+title: 2026-bioinf-ToT-EPIC-Namibia
+description: Training of Trainers - From Sequence Analysis to Teaching Practice | Applied Program on Accelerated Learning and Bioinformatics (2026)
+
+url: "https://rki-mf1.github.io"
+baseurl: "/2026-bioinf-ToT-EPIC-Namibia"
+
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+color_scheme: tutorial_light
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-include-cache
+  - jekyll-sitemap
+
+relative_links:
+  enabled: true
+  collections: true
+
+search_enabled: true
+enable_copy_code_button: true
+
+aux_links:
+  "Workshop repository":
+    - "https://github.com/rki-mf1/2026-bioinf-ToT-EPIC-Namibia"
+
+# Render all Markdown pages with the theme, but do not automatically
+# put every practical exercise into the navigation menu.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      nav_exclude: true
+
+callouts:
+  note:
+    title: "ℹ️ Note"
+    color: blue
+
+  tip:
+    title: "💡 Tip"
+    color: green
+
+  important:
+    title: "❗ Important"
+    color: purple
+
+  warning:
+    title: "⚠️ Warning"
+    color: yellow
+
+  caution:
+    title: "🛑 Caution"
+    color: red
+
+  question:
+    title: "❓ Question"
+    color: blue
+
+  task:
+    title: "✅ Task"
+    color: green
+
+  discussion:
+    title: "💬 Discussion"
+    color: purple
