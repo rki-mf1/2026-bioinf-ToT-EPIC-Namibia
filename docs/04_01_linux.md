@@ -3,11 +3,12 @@ title: Linux - Navigation and File Management
 parent: Linux
 nav_order: 1
 nav_exclude: false
+permalink: /linux_navigation/
 ---
 
 # Linux Basics, Navigation, and File Management
 
-## 🎯 Learning goals
+## 🎯 Learning objectives
 
 By the end of this lesson, you should be able to:
 
@@ -63,11 +64,10 @@ ls -lh
 ls -lt
 ```
 
-### 💬 Discussion
-
-- What is the difference between `ls`, `ls -l`, and `ls -lh`?
-- What does `ls ..` show?
-- Which option sorts by modification time, newest first?
+{: .discussion}
+> - What is the difference between `ls`, `ls -l`, and `ls -lh`?
+> - What does `ls ..` show?
+> - Which option sorts by modification time, newest first?
 
 ---
 
@@ -89,10 +89,9 @@ rm --help
 mkdir --help
 ```
 
-### 💬 Discussion
-
-- Which `ls` option shows human-readable file sizes?
-- Which `cp` option lets you copy directories recursively?
+{: .discussion}
+> - Which `ls` option shows human-readable file sizes?
+> - Which `cp` option lets you copy directories recursively?
 
 ---
 
@@ -167,9 +166,8 @@ ls .
 ls ..
 ```
 
-### 💬 Discussion
-
-Run these commands and explain why they work:
+{: .discussion}
+> Run these commands and explain why they work:
 
 ```bash
 cd ~/2026-Workshop-HSPA-Tunisia
@@ -186,7 +184,7 @@ cd ./data
 
 ## 6. Create files and directories
 
-> [!TIP]
+{: .tip}
 > **Naming files and directories in the Linux command line**
 > 
 > Good file and directory names make your work easier, especially when using tab completion, scripts, and command-line tools.
@@ -228,10 +226,9 @@ echo "Linux is powerful." >> notes.txt
 cat notes.txt
 ```
 
-### 💬 Discussion
-
-- What is the difference between `>` and `>>`?
-- Why is it useful to keep practice work in a separate directory?
+{: .discussion}
+> - What is the difference between `>` and `>>`?
+> - Why is it useful to keep practice work in a separate directory?
 
 Create a new file and open it in `nano`:
 
@@ -289,10 +286,9 @@ cp -r drafts drafts_copy
 ls
 ```
 
-### 💬 Discussion
-
-- When do you need `-r` with `cp`?
-- What is the difference between copying a file and copying a directory?
+{: .discussion}
+> - When do you need `-r` with `cp`?
+> - What is the difference between copying a file and copying a directory?
 
 ---
 
@@ -337,7 +333,7 @@ rm -r drafts_copy
 ls
 ```
 
-> [!CAUTION]
+{: .caution }
 > Be careful with `rm`, especially with `rm -r`. Deleted files do not go to a recycle bin.
 
 ---
@@ -376,10 +372,9 @@ less notes.txt
 - `p` — previous match
 - `Space` — next page
 
-### 💬 Discussion
-
-- When is `less` better than `cat`?
-- Which commands are more useful for large files?
+{: .discussion}
+> - When is `less` better than `cat`?
+> - Which commands are more useful for large files?
 
 
 ---
@@ -416,7 +411,7 @@ mv readme_copy.txt readme_backup.txt
 head readme.txt
 ```
 
-## 📌 Quick reference
+## 📌 Summary
 
 | Command | Purpose |
 | --- | --- |

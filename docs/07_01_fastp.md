@@ -1,15 +1,14 @@
 ---
 title: Fastp
-nav_order: 8
+parent: QC and Preprocessing of Raw Sequencing Data
+nav_order: 1
 nav_exclude: false
-has_children: false
-has_toc: false
 permalink: /fastp/
 ---
 
 # Quality control of Illumina paired-end reads with `fastp`
 
-## 🎯 Learning goals
+## 🎯 Learning objectives
 
 By the end of this practical, you should be able to:
 
@@ -260,16 +259,15 @@ Open the report.
 firefox filtered_reads/by_length/ERR16718582_min50_fastp.html
 ```
 
-### 💬 Discussion
-
-Compare the reports from the default run and the length-filtered run.
-
-Try to answer:
-
-1. How many read pairs were removed by the 50 bp minimum-length filter?
-2. Did the read length distribution change?
-3. Did length filtering change the total number of bases retained?
-4. Did the read 1 and read 2 outputs remain paired?
+{: .discussion}
+> Compare the reports from the default run and the length-filtered run.
+> 
+> Try to answer:
+> 
+> 1. How many read pairs were removed by the 50 bp minimum-length filter?
+> 2. Did the read length distribution change?
+> 3. Did length filtering change the total number of bases retained?
+> 4. Did the read 1 and read 2 outputs remain paired?
 
 ## 7. Filter reads by quality
 
@@ -366,7 +364,7 @@ fastp \
   --json filtered_reads/by_quality/ERR16718582_q20_u30_min50_fastp.json
 ```
 
-### 💬 Discussion
+{: .discussion}
 
 Compare the default, Q20/U30, Q30/U20, and combined Q20/U30/min50 reports.
 

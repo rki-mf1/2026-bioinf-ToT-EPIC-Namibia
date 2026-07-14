@@ -1,15 +1,14 @@
 ---
 title: Dataset
-nav_order: 7
+parent: Data Managment
+nav_order: 1
 nav_exclude: false
-has_children: false
-has_toc: false
 permalink: /dataset/
 ---
 
 # Downloading datasets
 
-> [!NOTE]
+{: .note}
 > The FASTQ files were already downloaded on the eserver, so you can use them, they are stored here: `/shared/fastq_files`. 
 
 In case you do not now have access to this directory on the server, you can download it. To do so, we first need to install a few tools.

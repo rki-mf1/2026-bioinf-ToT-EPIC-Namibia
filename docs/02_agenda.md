@@ -16,13 +16,11 @@ The online phase includes five sessions that introduce participants to key conce
 
 | Date              | Session | Activity                                      |
 |-------------------|---------|-----------------------------------------------|
-| Mon, 18 May 2026  | 01      | A) ToT curriculum;          B) Psychologically safe learning environments |   
-| Mon, 01 June 2026 | 02      | A) Six Trumps;              B) Bloom's Taxonomy |
-| Mon, 15 June 2026 | 03      | A) Six Trumps revisited;    B) 4C Map for Instructional Design & Delivery |
+| Mon, 18 May 2026  | 01      | A) ToT curriculum;          <br>B) Psychologically safe learning environments |   
+| Mon, 01 June 2026 | 02      | A) Six Trumps;              <br>B) Bloom's Taxonomy |
+| Mon, 15 June 2026 | 03      | A) Six Trumps revisited;    <br>B) 4C Map for Instructional Design & Delivery |
 | Mon, 29 June 2026 | 04      |     |
 | Mon, 13 July 2026 | 05      | Teaching sessions |
-
-4C's: Connections, Concepts, Concrete Practice, and Conclusions
 
 ## In-person training
 

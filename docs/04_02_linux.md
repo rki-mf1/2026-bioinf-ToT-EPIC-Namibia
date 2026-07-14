@@ -3,11 +3,12 @@ title: Linux - Viewing, Editing, Compressing, and Searching Files
 parent: Linux
 nav_order: 2
 nav_exclude: false
+permalink: /linux_files/
 ---
 
 # Viewing, Editing, Compressing, and Searching Files
 
-## 🎯 Learning goals
+## 🎯 Learning objectives
 
 By the end of this lesson, you should be able to:
 
@@ -70,11 +71,10 @@ gzip ERR16718636.fna
 ls -lh
 ```
 
-### 💬 Discussion
-
-- What changed in the file size?
-- Why is compression especially common for FASTA and FASTQ files?
-- What is the difference between `gzip` and `gunzip`?
+{: .discussion}
+> - What changed in the file size?
+> - Why is compression especially common for FASTA and FASTQ files?
+> - What is the difference between `gzip` and `gunzip`?
 
 ---
 
@@ -102,10 +102,9 @@ zcat ERR16718636.fna.gz | tail
 zless ERR16718636.fna.gz
 ```
 
-### 💬 Discussion
-
-- Why is `cat` not useful on a `.gz` file?
-- When is `zless` better than unzipping a large file first?
+{: .discussion}
+> - Why is `cat` not useful on a `.gz` file?
+> - When is `zless` better than unzipping a large file first?
 
 ---
 
@@ -144,11 +143,10 @@ Search for lines that start with a pattern:
 zgrep "^>" ERR16718636.fna.gz
 ```
 
-### 💬 Discussion
-
-- What does `-c` do?
-- What does `-i` do?
-- What does `^>` mean?
+{: .discussion}
+> - What does `-c` do?
+> - What does `-i` do?
+> - What does `^>` mean?
 
 ---
 
@@ -174,10 +172,9 @@ grep "OXA" amrfinderplus.tsv | less
 grep "OXA" amrfinderplus.tsv | head
 ```
 
-### 💬 Discussion
-
-- Why is `|` useful?
-- Which part runs first in `grep "OXA" amrfinderplus.tsv | less`?
+{: .discussion}
+> - Why is `|` useful?
+> - Which part runs first in `grep "OXA" amrfinderplus.tsv | less`?
 
 ---
 
@@ -306,10 +303,9 @@ Check the results:
 ls demo_project
 ```
 
-### 💬 Discussion
-
-- What is the difference between `bash create_project.sh ...` and `./create_project.sh ...`?
-- What happens if the script is not executable?
+{: .discussion}
+> - What is the difference between `bash create_project.sh ...` and `./create_project.sh ...`?
+> - What happens if the script is not executable?
 
 ---
 
@@ -339,10 +335,9 @@ chmod +x creating_files.sh
 ls
 ```
 
-### 💬 Discussion
-
-- What is brace expansion in `{1..4}`?
-- Why is it good practice to write variables as `${number}` instead of `$number` in scripts?
+{: .discussion}
+> - What is brace expansion in `{1..4}`?
+> - Why is it good practice to write variables as `${number}` instead of `$number` in scripts?
 
 ---
 
@@ -378,15 +373,14 @@ chmod +x if_else.sh
 ./if_else.sh
 ```
 
-### 💬 Discussion
-
-- What happens if you enter `10`?
-- What happens if you enter a letter instead of a number?
-- Which operators compare numbers in Bash?
+{: .discussion}
+> - What happens if you enter `10`?
+> - What happens if you enter a letter instead of a number?
+> - Which operators compare numbers in Bash?
 
 ---
 
-## 📌 Quick reference
+## 📌 Summary
 
 | Command | Purpose |
 | --- | --- |

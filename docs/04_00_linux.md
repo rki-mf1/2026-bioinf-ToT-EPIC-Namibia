@@ -9,8 +9,7 @@ permalink: /linux/
 
 # Linux Introduction
 
-
-## 🎯 Learning goals
+## 🎯 Learning objectives
 
 By the end of this tutorial, you should be able to:
 

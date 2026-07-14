@@ -1,17 +1,18 @@
 ---
 title: Conda
-nav_order: 6
+parent: Software Managment
+nav_order: 1
 nav_exclude: false
-has_children: false
-has_toc: false
 permalink: /conda/
+---
+
+![conda_logo](https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg)
+
 ---
 
 # Conda
 
-![conda_logo](https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg)
-
-## 🎯 Learning goals
+## 🎯 Learning objectives
 
 By the end of this practical, you should be able to:
 
@@ -161,16 +162,15 @@ When you are finished using an environment, you can deactivate it.
 conda deactivate
 ```
 
-### 💬 Discussion
+{: .discussion}
+> Try to answer the following questions:
+>
+> - Which command lists all available Conda environments?
+> - Which command activates the `fastp` environment?
+> - Why did `fastp` not work before activating the environment?
+> - Which command shows the installed version of `fastp`?
 
-Try to answer the following questions:
-
-- Which command lists all available Conda environments?
-- Which command activates the `fastp` environment?
-- Why did `fastp` not work before activating the environment?
-- Which command shows the installed version of `fastp`?
-
-### 📌 Quick reference
+### 📌 Summary
 
 In this practical, you used the following Conda commands:
 

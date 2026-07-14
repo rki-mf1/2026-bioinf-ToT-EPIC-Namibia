@@ -1,10 +1,11 @@
 ---
 title: Assembly QC
-nav_order: 10
+parent: Assembly
+nav_order: 1
 nav_exclude: false
-has_children: false
-has_toc: false
 permalink: /assembly_qc/
 ---
 
 # Assembly QC
+
+## 🎯 Learning objectives

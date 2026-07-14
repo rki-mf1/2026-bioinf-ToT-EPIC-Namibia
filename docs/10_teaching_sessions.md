@@ -1,6 +1,6 @@
 ---
 title: Teaching Sessions
-nav_order: 12
+nav_order: 10
 nav_exclude: false
 has_children: false
 has_toc: false

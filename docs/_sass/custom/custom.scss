@@ -64,3 +64,30 @@
 .main-content figure.highlight > code {
   border: 0;
 }
+
+// Markdown table styling
+.main-content table {
+  width: 100%;
+}
+
+// Header background
+.main-content table thead th {
+  background-color: rgba($blue-000, 0.35);
+  color: $grey-dk-300;
+  font-weight: 600;
+}
+
+// Default body-cell background
+.main-content table tbody td {
+  background-color: #f8fbff;
+}
+
+// Alternating rows
+.main-content table tbody tr:nth-child(even) td {
+  background-color: #edf5fc;
+}
+
+// Optional hover effect
+.main-content table tbody tr:hover td {
+  background-color: rgba($blue-000, 0.25);
+}

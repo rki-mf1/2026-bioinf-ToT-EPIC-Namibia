@@ -32,7 +32,7 @@ Main topics include:
  
 ---
 
-## Learning objectives
+## 🎯 Learning objectives
 
 Upon completion of the workshop, participants will be able to:
 
