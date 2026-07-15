@@ -91,3 +91,35 @@
 .main-content table tbody tr:hover td {
   background-color: rgba($blue-000, 0.25);
 }
+
+// Increase workshop logo size
+$workshop-logo-height: 220px;
+
+// Mobile header
+.site-header {
+  min-height: 100px;
+}
+
+.site-title {
+  min-height: 100px;
+  padding-top: $sp-2;
+  padding-bottom: $sp-2;
+}
+
+.site-logo {
+  background-position: center;
+  background-size: contain;
+}
+
+// Desktop and tablet: approximately 3x the default height
+@include mq(md) {
+  .site-header {
+    height: $workshop-logo-height;
+    min-height: $workshop-logo-height;
+    max-height: $workshop-logo-height;
+  }
+
+  .site-title {
+    height: $workshop-logo-height;
+  }
+}
