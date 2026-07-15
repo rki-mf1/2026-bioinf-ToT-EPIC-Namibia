@@ -7,7 +7,7 @@ has_toc: false
 permalink: /
 ---
 
-As part of the **EPIC project**, the Robert Koch Institute is organizing a Training-of-Trainers (ToT) program for Bioinformaticians in **Windhoek, Namibia** 🇳🇦.
+As part of the **EPIC project**, the Robert Koch Institute is organizing a Training-of-Trainers (ToT) program for Bioinformaticians in **Windhoek, Namibia**.
 The in-person training will take place from **29th of July to 12th of August 2026** at the **UNAM**.
 The aim of this Training-of-Trainers (ToT) program is to equip participants with the knowledge and practical skills to become effective bioinformatics instructors by bridging the gap between technical and didactical competences. 
 
