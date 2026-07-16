@@ -23,6 +23,8 @@ By the end of this practical, you should be able to:
 - check which software is available inside an environment
 - understand why a tool may not be available before activating the correct environment
 
+---
+
 ## Overview
 
 Bioinformatics tools often depend on very specific software versions. Installing all tools into one large system environment can quickly become messy, difficult to reproduce, and sometimes impossible to maintain.
@@ -35,7 +37,7 @@ In this practical, we will create and use a Conda environment for `fastp`.
 
 ---
 
-### 1. List all available conda environments
+## 1. List all available conda environments
 
 First, let’s check which Conda environments are already available.
 
@@ -54,7 +56,7 @@ base                  *  /home/user/miniconda3
 
 ---
 
-### 2. Create Conda environment with `fastp`
+## 2. Create Conda environment with `fastp`
 
 Now we can create the environment.
 
@@ -69,7 +71,7 @@ Here, we use two important parameters:
 
 ---
 
-### 3. Check that the environment was created
+## 3. Check that the environment was created
 
 Now list the available Conda environments again.
 
@@ -82,7 +84,7 @@ You should now see an environment called **fastp**.
 
 ---
 
-### 4. Try running fastp before activating the environment
+## 4. Try running fastp before activating the environment
 
 The `conda activate` command lets you switch to a specific environment. 
 You can use any of the environments that were listed in the output of `conda env list` command. 
@@ -110,7 +112,7 @@ The software was installed inside the fastp Conda environment, but that environm
 
 ---
 
-### 5. Activate the Conda environment
+## 5. Activate the Conda environment
 
 To use software installed inside a Conda environment, we first need to activate it.
 
@@ -134,7 +136,7 @@ This time, you should see the fastp help message instead of an error.
 
 ---
 
-### 6. Check which version of fastp is installed
+## 6. Check which version of fastp is installed
 
 It is good practice to check software versions, especially when working on reproducible analyses.
 
@@ -144,7 +146,7 @@ fastp --version
 
 ---
 
-### 7. List software installed in the active environment
+## 7. List software installed in the active environment
 
 You can inspect what is installed in the current Conda environment with:
 
@@ -154,7 +156,7 @@ conda list
 
 ---
 
-### 8. Deactivate the environment
+## 8. Deactivate the environment
 
 When you are finished using an environment, you can deactivate it.
 
@@ -170,7 +172,9 @@ conda deactivate
 > - Why did `fastp` not work before activating the environment?
 > - Which command shows the installed version of `fastp`?
 
-### 📌 Summary
+---
+
+## 📌 Summary
 
 In this practical, you used the following Conda commands:
 
