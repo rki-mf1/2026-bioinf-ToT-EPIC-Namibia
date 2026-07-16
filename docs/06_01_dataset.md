@@ -8,10 +8,9 @@ permalink: /dataset/
 
 # Downloading datasets
 
-{: .note}
-> The FASTQ files were already downloaded on the eserver, so you can use them, they are stored here: `/shared/fastq_files`. 
+This dataset contains paired-end Illumina whole-genome sequencing reads from eight *Klebsiella pneumoniae* isolates from wastewater ([Werner et al. 2026](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2026.1821458/full)). 
 
-In case you do not now have access to this directory on the server, you can download it. To do so, we first need to install a few tools.
+---
 
 We will use **NCBI SRA Toolkit**. The reads are downloaded with `prefetch`, converted to FASTQ with `fasterq-dump`, and compressed with `pigz`.
 

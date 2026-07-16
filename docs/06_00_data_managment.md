@@ -31,8 +31,7 @@ Create one main directory for each project and use the same structure whenever p
 
 Here is an idea for one way to organize it:
 
-```text
-project_name/
+<pre class="directory-tree"><code>project_name/
 ├── README.md
 ├── data/
 │   ├── raw/
@@ -44,8 +43,9 @@ project_name/
 │   ├── assembly/
 │   └── typing/
 ├── logs/
-└── reports/
-```
+└── reports/</code></pre>
+
+
 
 | Directory        | Contents                                       |
 |------------------|------------------------------------------------|

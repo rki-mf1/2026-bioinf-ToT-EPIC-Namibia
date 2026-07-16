@@ -65,6 +65,13 @@
   border: 0;
 }
 
+// Compact directory-tree blocks
+.main-content pre.directory-tree,
+.main-content pre.directory-tree code {
+  line-height: 1.15;
+  white-space: pre;
+}
+
 // Markdown table styling
 .main-content table {
   width: 100%;

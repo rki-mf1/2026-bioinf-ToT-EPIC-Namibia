@@ -15,16 +15,6 @@ Throughout this workshop, we will rely on GitHub and Conda. Before we begin, let
 
 ## Install Git
 
-Git is used to download repositories and track changes to files. 
-
-You should work from a cloned copy of [this](https://github.com/rki-mf1/2026-bioinf-ToT-EPIC-Namibia) repository in your **home** directory (`~`).
-To clone this repository you need to have `git` installed. 
-You can check if you already have `git` by opening a **terminal**, typing `git --version` and pressing enter. 
-If you do not see git help message you should install it with command `sudo apt-get install git`.
-
-On Ubuntu or WSL, install it with:
-
-
 Git is used to download repositories and track changes to files.
 
 You should work from a cloned copy of [this](https://github.com/rki-mf1/2026-bioinf-ToT-EPIC-Namibia) in your home directory (`~`).

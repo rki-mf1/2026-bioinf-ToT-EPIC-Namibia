@@ -49,7 +49,7 @@ Example output:
 ```bash
 # conda environments:
 #
-base                  *  /home/user/miniconda3
+base                  *  /home/user/miniforge3
 ```
 
 ---

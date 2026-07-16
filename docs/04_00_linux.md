@@ -7,7 +7,7 @@ has_toc: false
 permalink: /linux/
 ---
 
-![linux_logo](https://de.wikipedia.org/wiki/Linux#/media/Datei:Tux.svg){: width="160" }
+![linux_logo](https://upload.wikimedia.org/wikipedia/commons/d/dd/Linux_logo.jpg){: width="160" }
 
 # Linux Introduction
 
