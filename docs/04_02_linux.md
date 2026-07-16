@@ -17,6 +17,8 @@ By the end of this lesson, you should be able to:
 - extract columns from tabular files
 - write and run Bash scripts
 
+--- 
+
 ## Before you start
 
 Open a terminal and move into the workshop repository:

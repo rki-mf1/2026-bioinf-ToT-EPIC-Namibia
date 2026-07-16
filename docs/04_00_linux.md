@@ -7,43 +7,72 @@ has_toc: false
 permalink: /linux/
 ---
 
+![linux_logo](https://de.wikipedia.org/wiki/Linux#/media/Datei:Tux.svg)
+
 # Linux Introduction
 
 ## 🎯 Learning objectives
 
-By the end of this tutorial, you should be able to:
+By the end of the Linux module, you should be able to:
 
-- use the terminal with confidence
-- understand the current working directory
-- navigate with `cd`
-- distinguish between absolute and relative paths
-- create, copy, move, rename, and remove files and directories
-- inspect text files with standard command-line tools
-- edit text files with `nano`
-- work with `.gz` files
-- search text with `grep`
-- combine commands with pipes (`|`)
+- use the terminal and understand your current working directory
+- navigate the filesystem using absolute and relative paths
+- interpret special path symbols such as `~`, `.`, and `..`
+- create, inspect, edit, copy, move, rename, and remove files and directories
+- find help for commands using man and --help
+- search text using `grep`
+- combine commands using pipes (`|`)
+- extract selected columns from tabular files
+- write and execute simple Bash scripts
 
-## Setup
+---
 
-This tutorial introduces the Linux command line and basic filesystem operations that will be used throughout the workshop.
+![gui_vs_cli](https://www.fossmint.com/wp-content/uploads/2018/06/Linux-Cli-vs-Gui.png)
 
-You should work from a cloned copy of this repository in your **home** directory (`~`).
-To clone this repository you need to have `git` installed. 
-You can check if you already have `git` by opening a **terminal**, typing `git --version` and pressing enter. 
-If you do not see git help message you should install it with command `sudo apt-get install git`.
+## 💻 Why Command Line?
 
-### Cloning workshop GitHub repo
+Most people interact with computers through a **graphical user interface (GUI)** by clicking icons, opening menus, and moving files with a mouse.
 
-```bash
-cd ~
-git clone https://github.com/rki-mf1/2026-bioinf-ToT-EPIC-Namibia.git
-cd ~/2026-bioinf-ToT-EPIC-Namibia
-```
+GUIs are convenient for everyday tasks, but they are inefficient for large, repetitive, or complex analyses. For example, manually combining hundreds of sequencing files would be slow and prone to errors. 
 
-## 💻 Practicals
+---
 
-1. [Linux Basics, Navigation, and File Management](04_01_linux.md)
-2. [Viewing, Editing, Compressing, and Searching Files](04_02_linux.md)
+## ⌨️ Command-line interface
 
+A **command-line interface (CLI)** allows you to control the computer by entering text commands.
 
+Using the command line, you can:
+
+- process many files at once
+- automate repetitive tasks
+- combine several tools into a pipeline
+- record commands in scripts
+- reproduce an analysis
+- work on remote servers and computing clusters
+
+These features make the command line particularly important in bioinformatics, where analyses often involve large datasets and multiple processing steps. 
+
+---
+
+## 🐚 The shell
+
+The program that interprets command-line instructions is called a **shell**. One of the most commonly used Unix shells is **Bash**.
+
+The shell is both:
+
+- an interface for running commands
+- a scripting language for combining and automating commands
+
+{: .note }
+Learning the command line is similar to learning a new language: commands are the vocabulary, while syntax determines how they can be combined.
+
+---
+
+## 🧬 Why it matters for bioinformatics
+
+Many bioinformatics tools are designed primarily for the command line. Shell commands can be combined into reproducible workflows that process large numbers of sequencing files quickly and consistently.
+
+{: .discussion }
+What bioinformatics task would be difficult or time-consuming to perform manually through a graphical interface?
+
+---

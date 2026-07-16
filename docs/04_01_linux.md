@@ -19,17 +19,21 @@ By the end of this lesson, you should be able to:
 - create, edit, copy, move, rename, and remove files and directories
 - read built-in command documentation with `man` and `--help`
 
+---
+
 ## Working assumption
 
 This lesson assumes you cloned the repository into your **home** directory (`~`).
 All examples below use paths relative to that location.
+
+---
 
 ## Before you start
 
 Open a terminal and move into the workshop repository:
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 ```
 
 Create a safe practice area for this session:
@@ -43,6 +47,63 @@ Check where you are:
 ```bash
 pwd
 ```
+
+---
+
+## The shell prompt
+
+![prompt](https://linuxconfig.org/images/linux-bash-prompt.jpg)
+
+When you open a terminal, the shell displays a **prompt**. The prompt indicates that the terminal is ready to receive a command.
+
+A typical prompt may look like this:
+
+```bash
+user@workstation:~/direcotory$ █
+```
+
+The prompt commonly contains:
+- `user`            → Current username
+- `@`               → Separates the username and computer name
+- `workstation`     → Name of the computer or server
+- `:`               → Separates the computer name and current directory
+- `~/direcotory`    → Current working directory
+- `$`               → Indicates that the shell is ready for a command
+
+The exact appearance of the prompt may differ between computers. For those who are curious, you can [customize your bash prompt](https://www.howtogeek.com/307701/how-to-customize-and-colorize-your-bash-prompt/) by changing the color and information contained in it.
+
+
+---
+
+## Structure of a shell command
+
+Most shell commands follow this general structure:
+
+```bash
+command [options] [arguments]
+```
+
+For example:
+
+```
+ls -l ~
+```
+
+This command contains:
+
+| Component | Example | Purpose                                  |
+| --------- | ------- | ---------------------------------------- |
+| Command   | `ls`    | Specifies the action to perform          |
+| Option    | `-l`    | Modifies how the command behaves         |
+| Argument  | `~`     | Specifies what the command should act on |
+
+In this example, `ls` lists files, `-l` requests a detailed listing, and `~` specifies the home directory.
+
+{: .warning }
+> **Spaces** ` ` are important. The shell uses spaces to **separate** commands, options, and arguments!
+>
+> For example:
+> `ls -l` is valid, while `ls-l` causes the shell to search for a command named `ls-l`.
 
 ---
 
@@ -115,7 +176,7 @@ Linux is **case-sensitive**:
 Start in the repository root:
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 pwd
 ```
 
@@ -131,7 +192,7 @@ pwd
 cd ~
 pwd
 
-cd ~/2026-Workshop-HSPA-Tunisia/data
+cd ~/2026-bioinf-ToT-EPIC-Namibia/data
 pwd
 
 cd -
@@ -151,14 +212,14 @@ pwd
 
 An **absolute path** starts from the filesystem root `/`.
 
-Example: `/home/username/2026-Workshop-HSPA-Tunisia/data`
+Example: `/home/username/2026-bioinf-ToT-EPIC-Namibia/data`
 
 A **relative path** starts from where you are right now.
 
 Example workflow:
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 ls data
 
 cd data
@@ -170,7 +231,7 @@ ls ..
 > Run these commands and explain why they work:
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 ls data
 
 cd data
@@ -198,7 +259,7 @@ cd ./data
 Return to your scratch directory:
 
 ```bash
-cd ~/2026-Workshop-HSPA-Tunisia/scratch
+cd ~/2026-bioinf-ToT-EPIC-Namibia/scratch
 pwd
 ```
 
@@ -394,7 +455,7 @@ One possible solution:
 
 ```bash
 # 1.
-cd ~/2026-Workshop-HSPA-Tunisia/scratch
+cd ~/2026-bioinf-ToT-EPIC-Namibia/scratch
 mkdir project_demo
 cd project_demo
 

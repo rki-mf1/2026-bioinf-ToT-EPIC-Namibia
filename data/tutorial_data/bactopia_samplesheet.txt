@@ -1,0 +1,9 @@
+sample	runtype	genome_size	species	r1	r2	se	ont	assembly
+ERR16718582	paired-end	5700000	Klebsiella pneumoniae	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718582_1.fastq.gz	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718582_2.fastq.gz			
+ERR16718597	paired-end	5700000	Klebsiella pneumoniae	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718597_1.fastq.gz	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718597_2.fastq.gz			
+ERR16718618	paired-end	5700000	Klebsiella pneumoniae	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718618_1.fastq.gz	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718618_2.fastq.gz			
+ERR16718619	paired-end	5700000	Klebsiella pneumoniae	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718619_1.fastq.gz	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718619_2.fastq.gz			
+ERR16718620	paired-end	5700000	Klebsiella pneumoniae	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718620_1.fastq.gz	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718620_2.fastq.gz			
+ERR16718626	paired-end	5700000	Klebsiella pneumoniae	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718626_1.fastq.gz	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718626_2.fastq.gz			
+ERR16718635	paired-end	5700000	Klebsiella pneumoniae	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718635_1.fastq.gz	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718635_2.fastq.gz			
+ERR16718636	paired-end	5700000	Klebsiella pneumoniae	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718636_1.fastq.gz	~/2026-Workshop-HSPA-Tunisia/data/raw_data/ERR16718636_2.fastq.gz			

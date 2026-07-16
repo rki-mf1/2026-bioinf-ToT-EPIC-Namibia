@@ -9,7 +9,13 @@ permalink: /setup/
 
 # Recommended setup
 
-Clone the repository into your home directory:
+
+You should work from a cloned copy of [this](https://github.com/rki-mf1/2026-bioinf-ToT-EPIC-Namibia) repository in your **home** directory (`~`).
+To clone this repository you need to have `git` installed. 
+You can check if you already have `git` by opening a **terminal**, typing `git --version` and pressing enter. 
+If you do not see git help message you should install it with command `sudo apt-get install git`.
+
+## Cloning workshop GitHub repo
 
 ```bash
 cd ~
