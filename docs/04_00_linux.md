@@ -7,9 +7,11 @@ has_toc: false
 permalink: /linux/
 ---
 
-![linux_logo](https://de.wikipedia.org/wiki/Linux#/media/Datei:Tux.svg)
+![linux_logo](https://de.wikipedia.org/wiki/Linux#/media/Datei:Tux.svg){: width="160" }
 
 # Linux Introduction
+
+---
 
 ## 🎯 Learning objectives
 
@@ -74,5 +76,3 @@ Many bioinformatics tools are designed primarily for the command line. Shell com
 
 {: .discussion }
 What bioinformatics task would be difficult or time-consuming to perform manually through a graphical interface?
-
----

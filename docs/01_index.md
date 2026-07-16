@@ -18,12 +18,12 @@ The aim of this Training-of-Trainers (ToT) program is to equip participants with
 
 ## Logistics
 
-**Dates:** 29th of July to 12th of August 2026
-**Time:** The workshop runs from 9:15 to 16:30 each day, with a one-hour lunch break from 13:00-14:00. 
-**Location:** Seminar Room at the Veterinary Academic Hospital (Main Campus, UNAM). 
-**Catering:** will be provided. 
+- **Dates:** 29th of July to 12th of August 2026
+- **Time:** The workshop runs from 9:15 to 16:30 each day, with a one-hour lunch break from 13:00-14:00. 
+- **Location:** Seminar Room at the Veterinary Academic Hospital (Main Campus, UNAM). 
+- **Catering:** will be provided. 
 
-Please bring your own laptop!
+**Please bring your own laptop!**
 
 ---
 
@@ -108,5 +108,3 @@ Installation instructions are available here:
 
 - Franziska Kistner
 - Vladimir Bajić
-
----

@@ -8,6 +8,8 @@ permalink: /linux_navigation/
 
 # Linux Basics, Navigation, and File Management
 
+---
+
 ## 🎯 Learning objectives
 
 By the end of this lesson, you should be able to:
@@ -100,7 +102,7 @@ This command contains:
 In this example, `ls` lists files, `-l` requests a detailed listing, and `~` specifies the home directory.
 
 {: .warning }
-> **Spaces** ` ` are important. The shell uses spaces to **separate** commands, options, and arguments!
+> **Spaces** are important. The shell uses spaces to **separate** commands, options, and arguments!
 >
 > For example:
 > `ls -l` is valid, while `ls-l` causes the shell to search for a command named `ls-l`.
@@ -472,6 +474,9 @@ mv readme_copy.txt readme_backup.txt
 head readme.txt
 ```
 
+
+---
+
 ## 📌 Summary
 
 | Command | Purpose |
@@ -493,4 +498,3 @@ head readme.txt
 | `head` | Show first lines |
 | `tail` | Show last lines |
 
----

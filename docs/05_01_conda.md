@@ -10,8 +10,6 @@ permalink: /conda/
 
 ---
 
-# Conda
-
 ## 🎯 Learning objectives
 
 By the end of this practical, you should be able to:
@@ -185,5 +183,3 @@ In this practical, you used the following Conda commands:
 | `conda activate fastp` | Activate the `fastp` environment |
 | `conda list` | List installed packages in the active environment |
 | `conda deactivate` | Leave the active environment |
-
----

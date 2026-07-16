@@ -8,6 +8,8 @@ permalink: /fastp/
 
 # Quality control of Illumina paired-end reads with `fastp`
 
+---
+
 ## 🎯 Learning objectives
 
 By the end of this practical, you should be able to:
@@ -19,6 +21,8 @@ By the end of this practical, you should be able to:
 - understand adapter trimming and quality filtering for short-read data
 - filter reads by minimum length after trimming
 - compare quality-control results generated with different parameters
+
+---
 
 ## Overview
 
@@ -37,6 +41,8 @@ In this practical, we will use `fastp` to inspect and filter paired-end Illumina
 
 `fastp` automatically creates HTML and JSON reports. The HTML report can be opened in a web browser and is useful for checking read counts, read quality, GC content, duplication, adapter content, insert-size information, and filtering results.
 
+---
+
 ## 1. Activate the Conda environment
 
 First, create and activate the Conda environment that contains `fastp`.
@@ -53,6 +59,8 @@ fastp --version
 ```
 
 If the command prints a version number, the environment is ready.
+
+---
 
 ## 2. Prepare the working directory
 
@@ -108,6 +116,8 @@ ERR16718582_R2.fastq.gz
 
 > If your FASTQ files have different names, adjust the commands below accordingly.
 
+---
+
 ## 3. Basic `fastp` syntax for paired-end data
 
 The basic structure of a paired-end `fastp` command is:
@@ -159,6 +169,8 @@ For paired-end reads, always provide both input files and both output files:
 --in2 / --out2 for read 2
 ```
 
+---
+
 ## 4. Run `fastp` with default parameters
 
 First, run `fastp` using its default settings.
@@ -188,6 +200,8 @@ Check the output files.
 ls -lh filtered_reads/default_params/
 ```
 
+---
+
 ## 5. Open the HTML report
 
 Now you can download the `.html` file and open it on your presonal computer.
@@ -207,6 +221,8 @@ Look at the report and try to answer:
 5. Is adapter content detected?
 6. How do the read 1 and read 2 quality profiles compare?
 7. Did `fastp` report an insert-size estimate?
+
+---
 
 ## 6. Filter reads by length
 
@@ -269,6 +285,8 @@ firefox filtered_reads/by_length/ERR16718582_min50_fastp.html
 > 3. Did length filtering change the total number of bases retained?
 > 4. Did the read 1 and read 2 outputs remain paired?
 
+---
+
 ## 7. Filter reads by quality
 
 For Illumina data, quality often decreases toward the 3′ ends of reads. `fastp` provides several ways to filter reads by quality.
@@ -329,6 +347,8 @@ fastp \
   --json filtered_reads/by_quality/ERR16718582_avgq20_fastp.json
 ```
 
+---
+
 ## 8. Try different quality thresholds
 
 Now try a stricter setting. For example, require bases below Q30 to be treated as unqualified and allow at most 20% unqualified bases per read.
@@ -377,6 +397,8 @@ Try to answer:
 5. How does filtering affect GC content, duplication, and adapter content?
 6. How does filtering affect the total number of bases retained?
 
+---
+
 ## 9. Check all generated reports
 
 List all HTML reports created during this practical.
@@ -396,6 +418,8 @@ For example:
 ```bash
 firefox filtered_reads/by_quality/ERR16718582_q30_u20_fastp.html
 ```
+
+---
 
 ## 📌 Summary
 
@@ -419,5 +443,3 @@ Key corrections from `fastplong`-style syntax to Illumina paired-end `fastp` syn
 | `--mean_qual` | `--average_qual` if filtering by average read quality |
 | ONT-style long-read discussion | Illumina short-read adapter, per-base quality, and paired-end QC discussion |
 | `--length_required 500` for short reads | a short-read threshold such as `--length_required 50` |
-
----

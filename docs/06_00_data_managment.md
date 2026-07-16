@@ -192,5 +192,3 @@ Before considering an analysis complete, confirm that:
 
 {: .discussion }
 > Which files in your current projects would be difficult for another person to interpret, and what information would make them easier to reuse?
-
----

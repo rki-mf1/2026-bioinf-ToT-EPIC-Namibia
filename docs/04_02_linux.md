@@ -8,6 +8,8 @@ permalink: /linux_files/
 
 # Viewing, Editing, Compressing, and Searching Files
 
+---
+
 ## 🎯 Learning objectives
 
 By the end of this lesson, you should be able to:
@@ -399,5 +401,3 @@ chmod +x if_else.sh
 | `chmod +x` | Make a file executable |
 | `bash script.sh` | Run a script with Bash |
 | `./script.sh` | Run an executable script directly |
-
----

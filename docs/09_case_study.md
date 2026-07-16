@@ -75,5 +75,3 @@ By the end of the Case Studies, participants should be able to:
 * document and interpret analytical results
 * recognise limitations and uncertainty
 * communicate findings clearly to others
-
----

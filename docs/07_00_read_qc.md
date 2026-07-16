@@ -9,5 +9,6 @@ permalink: /read_qc/
 
 # Quality Control (QC) and Preprocessing of Raw Sequencing Data
 
+---
 
 ## 🎯 Learning objectives

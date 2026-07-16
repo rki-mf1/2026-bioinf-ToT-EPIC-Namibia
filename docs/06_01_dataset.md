@@ -69,5 +69,3 @@ done
 # go back to workshop dir
 cd ~/2026-bioinf-ToT-EPIC-Namibia
 ```
-
----

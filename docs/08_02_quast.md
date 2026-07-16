@@ -10,6 +10,8 @@ permalink: /quast/
 
 # Assessing genome assemblies with `QUAST`
 
+---
+
 ## 🎯 Learning objectives
 
 By the end of this practical, you should be able to:
@@ -22,6 +24,8 @@ By the end of this practical, you should be able to:
 - interpret reference-based metrics such as genome fraction, duplication ratio, misassemblies, mismatches, and indels
 - compare multiple assemblies using the same evaluation settings
 - recognize limitations of QUAST and identify additional assembly QC steps
+
+---
 
 ## Overview
 

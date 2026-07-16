@@ -124,5 +124,3 @@ By the end of the microteaching activity, participants should be able to:
 * provide and receive constructive feedback
 
 Microteaching brings together the technical and educational components of the workshop. It allows participants to move from learning about teaching to actively designing, delivering, and evaluating a bioinformatics lesson.
-
----
