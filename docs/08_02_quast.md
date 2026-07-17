@@ -89,7 +89,7 @@ ls -lh "$ASSEMBLY"
 Confirm that the file contains FASTA records:
 
 ```bash
-grep -c '^>' "$ASSEMBLY"
+grep '^>' "$ASSEMBLY"
 ```
 
 {: .note }
@@ -149,7 +149,6 @@ The most useful reference-free metrics are:
 | `Total length` | Sum of the evaluated contig lengths |
 | `N50` | Contig length at which at least 50% of the assembly is contained in contigs of that length or longer |
 | `L50` | Minimum number of largest contigs required to reach 50% of the assembly length |
-| `auN` | Summary of the complete contig-length distribution |
 | `GC (%)` | Percentage of bases that are G or C |
 | `# N's per 100 kbp` | Number of ambiguous bases per 100,000 assembly bases |
 
