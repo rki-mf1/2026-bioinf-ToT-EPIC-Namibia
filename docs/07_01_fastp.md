@@ -102,14 +102,14 @@ You should see two files, one for read 1 and one for read 2.
 
 Example paired-end naming patterns include:
 
-```text
+```bash
 ERR16718582_1.fastq.gz
 ERR16718582_2.fastq.gz
 ```
 
 or:
 
-```text
+```bash
 ERR16718582_R1.fastq.gz
 ERR16718582_R2.fastq.gz
 ```
@@ -164,7 +164,7 @@ Important options used in this practical:
 
 For paired-end reads, always provide both input files and both output files:
 
-```text
+```bash
 --in1 / --out1 for read 1
 --in2 / --out2 for read 2
 ```
