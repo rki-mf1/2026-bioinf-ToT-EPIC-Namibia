@@ -1,4 +1,15 @@
-data/
-analysis/
-analyses/
-scratch/
+# Ignore everything at the repository root
+/*
+
+# Keep this file
+!/.gitignore
+
+# Keep required directories
+!/data/prodigal_training_files
+!/data/tutorial_data
+!/docs/
+!/.github/
+
+# Keep required root files
+!/LICENSE
+!/README.md
