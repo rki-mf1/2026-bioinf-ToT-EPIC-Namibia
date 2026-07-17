@@ -180,9 +180,7 @@ After all four Flye assemblies have been generated, QUAST can compare them in on
 Confirm that the assemblies exist:
 
 ```bash
-for sample in AR-1049-GC AR-1049-MV AR-1054 AR-1054-GC; do
-  ls -lh "analyses/flye/output/${sample}/assembly.fasta"
-done
+ls -lh analyses/flye/output/*/assembly.fasta
 ```
 
 Run the comparison:
