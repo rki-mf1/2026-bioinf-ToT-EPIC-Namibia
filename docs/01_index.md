@@ -9,7 +9,7 @@ permalink: /
 
 # Training of Trainers: From Sequence Analysis to Teaching Practice 
 
-As part of the **EPIC project**, the Robert Koch Institute is organizing a Training-of-Trainers (ToT) program for Bioinformaticians in **Windhoek, Namibia**. The in-person training will take place from **25 November - 09 December** at the **UNAM**.
+As part of the EPIC project, the Robert Koch Institute is organizing a Training-of-Trainers (ToT) program for Bioinformaticians in Windhoek. The in-person training will take place from **25 November - 09 December** at the UNAM.
 
 The aim of this Training-of-Trainers (ToT) program is to equip participants with the foundational knowledge and practical skills to become effective bioinformatics instructors by bridging the gap between technical and didactical competences. 
 
