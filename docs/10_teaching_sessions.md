@@ -9,54 +9,57 @@ permalink: /teaching_sessions/
 
 # 🎓 Microteaching
 
-Microteaching is a practical activity in which participants prepare and deliver a short teaching session on a selected bioinformatics topic. The purpose is not only to demonstrate technical knowledge, but also to apply the teaching principles, lesson-planning approaches, and facilitation methods introduced during the workshop.
-
-On the first day of the workshop, each participant or group will draw a topic by tombola. The assigned topic will be a surprise and may be unfamiliar. Participants are therefore not expected to already be experts in the subject.
+Microteaching is a practical activity in which you prepare and deliver a short teaching session based on your **case study**. The purpose is not only to demonstrate technical knowledge, but also to apply the teaching principles, lesson-planning approaches, and facilitation methods introduced during the virtual preparation phase.
 
 {: .important }
-The aim of the activity is not to test prior knowledge. It is to practise how to independently explore a new topic, identify its essential learning points, and transform technical information into a clear and engaging teaching session.
+The aim of the activity is not to present your case study results again. It is to practice how to identify the essential learning points of a topic you have worked on and transform them into a clear and engaging teaching session for others.
 
 ---
 
-## 🎲 Topic allocation
+## 🗓️ Schedule
 
-The topics will focus mainly on bacterial pathogen genomics and may include:
-
-* Multilocus sequence typing, or MLST
-* Core-genome MLST, or cgMLST
-* Antimicrobial resistance detection
-* Phylogenetic analysis with IQ-TREE
-* Variant calling and outbreak analysis with Snippy
-* Pathogen-specific typing tools, such as Kleborate
-* Other relevant bioinformatics methods or tools
-
+| Date             | Session                                   |
+|------------------|-------------------------------------------|
+| Fri, 04 Dec 2026 | Microteaching introduction (afternoon)    |
+| Mon, 07 Dec 2026 | Microteaching I: Preparation              |
+| Tue, 08 Dec 2026 | Microteaching II: Preparation             |
+| Wed, 09 Dec 2026 | Microteaching III: Delivery and evaluation; closing |
 
 ---
 
-## 🗓️ Preparation period
+## 🧩 Your topic
 
-Participants will have three days to prepare their microteaching session.
+Your microteaching topic builds on your case study. You decide which part of your genome reconstruction workflow you want to teach, for example:
 
-After receiving the topic, they will work independently or within their assigned group. During this period, they will need to:
+* read quality control and filtering of long-read data
+* de novo genome assembly
+* assembly quality assessment and accept/reject decisions
+* a pathogen-specific step or tool you explored during your case study
 
-1. Understand the purpose and basic principles of the assigned method or tool.
-2. Identify the most important information for the intended learners.
+Choose a focused topic that fits the available teaching time. Think about who your future learners are and what they need to know to get started.
+
+---
+
+## 🛠️ Preparation period
+
+You will have two days to prepare your microteaching session. During this period, you will need to:
+
+1. Select the part of your case study you want to teach and define your target learners.
+2. Identify the most important information for these learners.
 3. Define clear and realistic learning objectives.
 4. Decide how the topic should be explained and demonstrated.
 5. Prepare suitable teaching materials, examples, exercises, or discussion questions.
-6. Rehearse the session and adjust it to the available teaching time.
 
-Participants should not attempt to cover every technical detail. The focus should be on selecting the information that learners need in order to understand the topic and begin applying it.
+Do not attempt to cover every technical detail. Focus on the information learners need in order to understand the topic and begin applying it.
 
 ---
 
 ## 🤝 Trainer consultations
 
-Although most of the preparation will be self-directed, trainers will be available throughout the three-day preparation period for consultations.
+Although most of the preparation will be self-directed, trainers will be available throughout the preparation days for consultations.
 
-Participants may ask trainers for support with:
+You may ask trainers for support with:
 
-* understanding the assigned topic
 * identifying reliable documentation and learning resources
 * defining appropriate learning objectives
 * selecting the scope of the session
@@ -64,18 +67,17 @@ Participants may ask trainers for support with:
 * structuring the lesson
 * resolving technical problems
 * reviewing teaching materials
-* practising explanations or receiving feedback
 
 {: .note }
-Trainer consultations are intended to guide participants through the preparation process. Trainers will support decision-making and problem-solving, but participants remain responsible for designing and preparing their own session.
+Trainer consultations are intended to guide you through the preparation process. Trainers will support decision-making and problem-solving, but you remain responsible for designing and preparing your own session.
 
 ---
 
-## 👩‍🏫 Final teaching session
+## 👩‍🏫 Delivery
 
-On the final day of the workshop, each participant or group will deliver the prepared microteaching session to the other participants.
+On the final day of the workshop, you will deliver your microteaching session to the other participants.
 
-The session should demonstrate both technical understanding and effective teaching practice. Participants should aim to:
+The session should demonstrate both technical understanding and effective teaching practice. Aim to:
 
 * introduce the topic and explain why it is relevant
 * communicate clear learning objectives
@@ -85,42 +87,24 @@ The session should demonstrate both technical understanding and effective teachi
 * manage the available time effectively
 * conclude with the main take-home messages
 
-The other participants will take the role of learners. This creates an opportunity to practise teaching in a supportive environment and to learn from the different approaches used by the group.
+The other participants will take the role of learners. This creates an opportunity to practice teaching in a supportive environment and to learn from the different approaches used by the group.
 
 ---
 
 ## 💬 Reflection and feedback
 
-After the teaching sessions, participants will reflect on their experience and receive constructive feedback from peers and trainers.
-
-The feedback will focus on areas such as:
-
-* clarity of explanations
-* lesson structure
-* alignment between objectives and activities
-* learner engagement
-* use of examples and visual materials
-* technical accuracy
-* pacing and time management
-* strengths and possible improvements
+After each teaching session, you will reflect on your experience and receive constructive feedback from peers and trainers.
 
 {: .discussion }
-How did you decide which information was essential for your learners? What did you leave out, and why?
+How did you decide which information from your case study was essential for your learners? What did you leave out, and why?
 
 ---
 
 ## 🎯 Learning outcomes
 
-By the end of the microteaching activity, participants should be able to:
+By the end of the activity, participants should be able to:
 
-* independently approach an unfamiliar bioinformatics topic
 * identify the key concepts required for an introductory lesson
-* formulate clear learning objectives
 * design a structured teaching session
 * explain technical content to learners with different levels of experience
 * use interactive teaching methods
-* respond to questions and unexpected situations
-* reflect on their own teaching practice
-* provide and receive constructive feedback
-
-Microteaching brings together the technical and educational components of the workshop. It allows participants to move from learning about teaching to actively designing, delivering, and evaluating a bioinformatics lesson.
