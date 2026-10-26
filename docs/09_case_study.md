@@ -1,5 +1,5 @@
 ---
-title: Case Studdies
+title: Case Study
 nav_order: 9
 nav_exclude: false
 has_children: false
