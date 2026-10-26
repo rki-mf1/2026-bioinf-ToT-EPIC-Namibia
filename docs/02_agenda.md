@@ -24,17 +24,17 @@ The online phase includes five sessions that introduce participants to key conce
 
 ## In-person training
 
-| Date              | Day    | Activity                                      |
-|-------------------|--------|-----------------------------------------------|
-| Wed, 29 July 2026 | Day 01 | Onboarding, workshop overview, environment setup, Linux basics |
-| Thu, 30 July 2026 | Day 02 | Linux basics, Conda  |
-| Fri, 31 July 2026 | Day 03 | Read quality control and filtering |
-| Mon, 03 July 2026 | Day 04 | Read quality control and filtering |
-| Tue, 04 July 2026 | Day 05 | Genome assembly and quality control |
-| Wed, 05 July 2026 | Day 06 | Genome assembly and quality control |
-| Thu, 06 July 2026 | Day 07 | Case study |
-| Fri, 07 July 2026 | Day 08 | Case study |
-| Mon, 10 July 2026 | Day 09 | Microteaching - preparation |
-| Tue, 11 July 2026 | Day 10 | Microteaching - preparation |
-| Wed, 12 July 2026 | Day 11 | Microteaching - delivery    |
+| Date              | Day    | Activity                                                        |
+|-------------------|--------|-----------------------------------------------------------------|
+| Wed, 25 Nov 2026  | Day 01 | Onboarding: Welcome, environment setup, command line foundations I |
+| Thu, 26 Nov 2026  | Day 02 | Onboarding: Command line foundations II, Conda                  |
+| Fri, 27 Nov 2026  | Day 03 | Genome reconstruction: Workflow overview and file types, read QC I |
+| Mon, 30 Nov 2026  | Day 04 | Genome reconstruction: Read QC II                               |
+| Tue, 01 Dec 2026  | Day 05 | Genome reconstruction: De novo assembly and assembly QC         |
+| Wed, 02 Dec 2026  | Day 06 | Case study I: Research, run the analyses                        |
+| Thu, 03 Dec 2026  | Day 07 | Case study II: Research, run the analyses                       |
+| Fri, 04 Dec 2026  | Day 08 | Case study III: Present and share; microteaching introduction   |
+| Mon, 07 Dec 2026  | Day 09 | Microteaching I: Preparation                                    |
+| Tue, 08 Dec 2026  | Day 10 | Microteaching II: Preparation                                   |
+| Wed, 09 Dec 2026  | Day 11 | Microteaching III: Delivery; closing                            |
 
