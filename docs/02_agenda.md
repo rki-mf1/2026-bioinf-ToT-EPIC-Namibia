@@ -9,7 +9,7 @@ permalink: /agenda/
 
 # Agenda
 
-The ToT begins with a virtual preparation phase, followed by two weeks of in-person training at the School of Veterinary Medicine (UNAM). 
+The ToT begins with a virtual preparation phase, followed by two weeks of in-person training at UNAM. 
 The online phase includes five sessions that introduce participants to key concepts and allow for joint refinement of thematic focus areas ahead of the on-site component.
 
 ## Virtual preparation phase
