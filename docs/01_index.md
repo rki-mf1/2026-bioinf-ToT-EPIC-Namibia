@@ -8,6 +8,7 @@ permalink: /
 ---
 
 # Training of Trainers: From Sequence Analysis to Teaching Practice 
+
 As part of the EPIC project, the Robert Koch Institute is organizing a Training-of-Trainers (ToT) program in Windhoek. The in-person training will take place from **25 November - 09 December** at UNAM.
 
 The aim of this Training-of-Trainers (ToT) program is to equip participants with the foundational knowledge and practical skills to become effective bioinformatics instructors by bridging the gap between technical and didactical competences. 
@@ -16,11 +17,12 @@ The aim of this Training-of-Trainers (ToT) program is to equip participants with
 
 ## ℹ️ Logistics
 
-- **Dates:** 25 November - 09 December
-- **Time:** The workshop runs from 9:15 to 16:30 each day, with a one-hour lunch break from 13:00-14:00. 
-- **Catering:** will be provided. 
 
-**Please bring your own laptop!**
+- **Dates:** 25 November - 09 December
+- **Time:** 9:15 - 16:30, with a lunch break from 13:00-14:00. 
+- **Catering:** will be provided.
+
+Please bring your own laptop. In some cases, we provide additional high-performing laptops for sequence data analysis. 
 
 ---
 
@@ -57,17 +59,17 @@ At the end of this training and through active participation, trainees will be a
 
 ---
 
-## Preparations
+## ⏱️ Preparations
 
 To make the most of the in-person component, we kindly ask all participants to complete the following preparations in advance.
 
 ### 1. Propose a project
 
-The case study days are built around your own work. To make them relevant, we offer the opportunity to each trainee to propose a sequence data analysis project, that is, a project that runs through the workflow covered in this training, from raw reads to a quality-controlled assembly (FASTA). Please check [Case Study](#09_case_study.md).
+The case study days are built around your own work. To make them relevant, we offer the opportunity to each trainee to propose a sequence data analysis project. Please check [Case Study](09_case_study.md). Further instructions will be communicated via e-mail.
 
 ### 2. Complete tutorials
 
-Please complete the following three tutorials available at [Terminal Tutor](https://www.terminaltutor.com/) and [Software Capentry](https://swcarpentry.github.io/shell-novice/index.html) :
+Please complete the following three tutorials available at [Terminal Tutor](https://www.terminaltutor.com/) and [Software Capentry](https://swcarpentry.github.io/shell-novice/index.html):
 
 - **Interacting with the Terminal**  
 
@@ -79,7 +81,7 @@ We kindly ask you to complete the tutorials during the two weeks before the in-p
 
 ### 3. Install Visual Studio Codium
 
-Documentation can be found here: [https://code.visualstudio.com/docs](https://vscodium.com/#install)
+Please install VSCodium. Documentation can be found here: [https://code.visualstudio.com/docs](https://vscodium.com/#install)
 
 ### 4. Install WSL
 
