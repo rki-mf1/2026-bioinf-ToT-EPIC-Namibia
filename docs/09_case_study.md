@@ -15,6 +15,16 @@ The purpose of this activity is to apply the tools, workflows, and analytical ap
 
 ---
 
+## 🗓️ Schedule
+
+| Date             | Session                                              |
+|------------------|------------------------------------------------------|
+| Wed, 02 Dec 2026 | Case Study I: Research, run the analyses |
+| Thu, 03 Dec 2026 | Case Study II: Run the analyses                      |
+| Fri, 04 Dec 2026 | Case Study III: Present findings and wrap-up    |
+
+---
+
 ## 💡 Project proposals
 
 Before the workshop, participants will be invited to propose a small project. Each proposal should include:
@@ -67,10 +77,10 @@ Did the available data and selected methods allow the group to answer the origin
 
 ## 🎯 Learning outcomes
 
-By the end of this activity, participants should be able to:
+By the end of the case study block, participants should be able to:
 
-* translate a research question into a practical analysis plan
-* apply methods learned during the training to a real dataset
-* work collaboratively on a bioinformatics project
-* document and interpret analytical results
-* communicate findings clearly to others
+1. Translate a research question into a practical analysis plan.
+2. Apply methods learned during the training to a real dataset.
+3. Work collaboratively on a bioinformatics project.
+4. Document and interpret analytical results.
+5. Communicate findings clearly to others.
