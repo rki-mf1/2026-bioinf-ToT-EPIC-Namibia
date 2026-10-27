@@ -7,9 +7,9 @@ has_toc: false
 permalink: /case_studdies/
 ---
 
-# 🧩 Case Studies
+# 🧩 Case Study
 
-During the Case Studies, participants will work in two groups on one of two projects selected from a pool of project ideas submitted before the in-person training.
+During the case studies, participants will work in two groups on one of two projects selected from a pool of project ideas submitted before the in-person training.
 
 The purpose of this activity is to apply the tools, workflows, and analytical approaches learned during the first part of the training to a real dataset and research question.
 
@@ -28,7 +28,7 @@ Before the workshop, participants will be invited to propose a small project. Ea
 Projects should be clearly defined, technically feasible, and small enough to complete within one working day.
 
 {: .important }
-The Case Studies are intended for focused analyses, not large research projects. The research question should be specific and answerable within one day. The participants should propose only datasets on which they can work colaboratively - so please, avoid sensitive data which you cannot share with other participants. 
+The case studies are intended for focused analyses, not large research projects. The research question should be specific and answerable within one day. The participants should propose only datasets on which they can work colaboratively - so please, avoid sensitive data which you cannot share with other participants. 
 
 The trainers will review the proposals and select two projects. The selected topics should be announced before the in-person training so that the required data, metadata, reference files can be prepared.
 
@@ -36,7 +36,7 @@ The trainers will review the proposals and select two projects. The selected top
 
 ## 👥 Group work
 
-On the first Case Study day, each group will:
+On the first and second case study day, each group will:
 
 1. Review the research question and available data.
 2. Define a realistic analysis plan.
@@ -50,7 +50,7 @@ Trainers will be available for consultations and troubleshooting, but each group
 
 ## 📊 Presentation of findings
 
-On the second half of the second day dedicated for the case studies, each group will present its project and findings to the other participants and trainers.
+On the second half of the third day dedicated for the case studies, each group will present its project and findings to the other participants and trainers.
 
 The 30 min presentation should include:
 
@@ -67,11 +67,10 @@ Did the available data and selected methods allow the group to answer the origin
 
 ## 🎯 Learning outcomes
 
-By the end of the Case Studies, participants should be able to:
+By the end of this activity, participants should be able to:
 
 * translate a research question into a practical analysis plan
 * apply methods learned during the training to a real dataset
 * work collaboratively on a bioinformatics project
 * document and interpret analytical results
-* recognise limitations and uncertainty
 * communicate findings clearly to others
