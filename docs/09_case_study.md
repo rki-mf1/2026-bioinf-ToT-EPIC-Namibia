@@ -39,9 +39,9 @@ Each proposal should include:
 Projects should be clearly defined, technically feasible, and small enough to complete within two working days.
 
 {: .important }
-The case studies are intended for focused analyses, not large research projects. The research question should be specific and answerable within one day. The participants should propose only datasets on which they can work colaboratively - so please, avoid sensitive data which you cannot share with other participants. 
+The case studies are intended for focused analyses, not large research projects. The research question should be specific and answerable within one day. The participants should propose only datasets on which they can work collaboratively - so please, avoid sensitive data which you cannot share with other participants. 
 
-The trainers will review the proposals and select two projects. The selected topics should be announced before the in-person training so that the required data, metadata, reference files can be prepared.
+The trainers will review the proposals and select two projects. The selected topics will be announced before the in-person training.
 
 ---
 
