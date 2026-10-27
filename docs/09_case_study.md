@@ -27,15 +27,16 @@ The purpose of this activity is to apply the tools, workflows, and analytical ap
 
 ## 💡 Project proposals
 
-Before the workshop, participants will be invited to propose a small project. Each proposal should include:
+Before the workshop, you are invited to propose a small research or surveillance project. Your project must include genome reconstruction, ideally of a bacterial genome from long-read (Nanopore) data.
 
-* a brief description of the dataset
-* the organism or bacterial pathogen
-* the sequencing technology, such as Illumina or Oxford Nanopore
-* the main research question
-* the expected analysis or output
+Each proposal should include:
+•	a brief description of the dataset
+•	the organism or bacterial pathogen
+•	the sequencing technology, such as Illumina or Oxford Nanopore
+•	the main research question
+•	the expected analysis or output
 
-Projects should be clearly defined, technically feasible, and small enough to complete within one working day.
+Projects should be clearly defined, technically feasible, and small enough to complete within two working days.
 
 {: .important }
 The case studies are intended for focused analyses, not large research projects. The research question should be specific and answerable within one day. The participants should propose only datasets on which they can work colaboratively - so please, avoid sensitive data which you cannot share with other participants. 
