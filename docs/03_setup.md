@@ -9,14 +9,15 @@ permalink: /setup/
 
 # Setup
 
-There are two ways to take part in the workshop:
+There are three ways to take part in the workshop:
 
 * **Using a workshop laptop**: Everything is already installed. Work through the [checklist](#using-a-workshop-laptop).
-* **Using your own laptop**: Connect to the [Wifi](#wifi) and follow the [setup guide](#using-your-own-laptop) to install the necessary software and download the data. 
+* **Using your own laptop**: Follow the [setup guide](#using-your-own-laptop) to install the necessary software and download the data. 
+* **Using your own Windows laptop**: First [set up WSL](#windows-laptops-set-up-wsl-first), which gives you Ubuntu Linux inside Windows. Then follow the [setup guide](#using-your-own-laptop) inside the Ubuntu terminal.
 
 {: .tip }
 > To paste into the terminal, press: 
-> `Ctrl` + `Shift` + `V` (Linux) or 
+> `Ctrl` + `Shift` + `V` (Linux and WSL/Windows Terminal) or 
 > `Cmd` + `V` (macOS).
 
 ---
@@ -62,7 +63,8 @@ ls ~/2026-bioinf-ToT-EPIC-Namibia
 ```
 If you see `data` and `docs`, you have successfully cloned the workshop directory.
 
-### Data
+**Toy dataset**
+
 Follow the instruction [here](06_01_dataset.md) to download the toy datasets.
 This might take a while, so please continue in a fresh terminal while the datasets are being downloaded.
 
@@ -106,9 +108,77 @@ You should see `kp` and `kp_ont`.
 
 ---
 
+## Windows laptops: set up WSL first
+
+The workshop tools run on Linux. On a Windows laptop, you can use the **Windows Subsystem for Linux (WSL)**. WSL runs a full Ubuntu Linux system inside Windows, so you can follow the same steps as on a Linux laptop.
+
+{: .important }
+> You need **administrator rights** on your laptop and **Windows 10 (version 2004 or newer) or Windows 11**. If you are unsure, ask a facilitator before you start.
+
+### Install WSL and Ubuntu
+
+Open **PowerShell as administrator**: click Start, type `PowerShell`, right-click **Windows PowerShell** and choose **Run as administrator**.
+
+Install WSL together with Ubuntu:
+```powershell
+wsl --install
+```
+
+**Restart your laptop** when the installation has finished.
+
+After the restart, Ubuntu opens automatically (otherwise, open **Ubuntu** from the Start menu). Finishing the installation can take a few minutes. You are then asked to create a Linux username and password.
+
+{: .note }
+> When you type your password, nothing appears on the screen. This is normal on Linux. Type the password and press `Enter`. Remember this password: you need it whenever you use `sudo`.
+
+### Check the installation
+
+In PowerShell (no administrator rights needed), run:
+```powershell
+wsl --list --verbose
+```
+You should see `Ubuntu` with `VERSION` `2`. If it shows `1`, run:
+```powershell
+wsl --set-version Ubuntu 2
+```
+
+### Update Ubuntu
+
+In the Ubuntu terminal, run:
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### Check that systemd is enabled
+
+Docker needs `systemd` inside WSL. Check the WSL configuration:
+```bash
+cat /etc/wsl.conf
+```
+You should see:
+```
+[boot]
+systemd=true
+```
+If these lines are missing, add them:
+```bash
+printf '[boot]\nsystemd=true\n' | sudo tee -a /etc/wsl.conf
+```
+Then restart WSL. In PowerShell, run `wsl --shutdown` and open Ubuntu again.
+
+### Notes for the next steps
+
+Now continue with the [setup guide for your own laptop](#using-your-own-laptop). Run all commands **in the Ubuntu terminal**, not in PowerShell. Keep these WSL details in mind:
+
+* **Log out and log back in** (Docker step): close all Ubuntu windows, run `wsl --shutdown` in PowerShell, then open Ubuntu again.
+* **VSCodium**: install it inside Ubuntu as described below and start it from the Ubuntu terminal with `codium`. The window opens on your Windows desktop. If no window appears, run `wsl --update` in PowerShell and try again.
+* **Where to keep your files**: work in your Linux home directory (`~`). Your Windows files are visible under `/mnt/c/`, but working there is much slower.
+
+---
+
 ## Using your own laptop
 
-Please follow these steps to set up your working environment.
+Please follow these steps to set up your working environment. On a Windows laptop, [set up WSL](#windows-laptops-set-up-wsl-first) first and run all steps in the Ubuntu terminal.
 
 ### Workshop directory
 
@@ -148,7 +218,7 @@ sudo apt update
 sudo apt install -y codium
 ```
 
-Open VSCodium, open the directory `2026-HSPA-Autumn-School` in VSCodium (Open Folder...) and continue the setup there.
+Open VSCodium, open the directory `2026-bioinf-ToT-EPIC-Namibia` in VSCodium (Open Folder...) and continue the setup there.
 
 To open a terminal in VSCodium, select Terminal -> New Terminal in the top bar.
 
@@ -288,3 +358,29 @@ channels:
   - conda-forge
   - bioconda
 ```
+
+### Nextflow
+
+[Nextflow](https://www.nextflow.io/) is a workflow manager. It runs multi-step bioinformatics pipelines and takes care of starting each step in its own container.
+
+Create a Conda environment named `nextflow`:
+```bash
+conda create -y -n nextflow nextflow
+```
+
+Verify the installation:
+```bash
+conda activate nextflow
+nextflow -version
+conda deactivate
+```
+You should see a version number.
+
+### Toy dataset
+
+Follow the instruction [here](06_01_dataset.md) to download the toy datasets.
+This might take a while, so you can continue in a fresh terminal while the datasets are being downloaded.
+
+### Check your setup
+
+Finally, work through the [checklist for workshop laptops](#checklist) and [run the checks](#run-the-checks). Skip the cloning step, as you have already cloned the workshop directory. If every check passes, your laptop is ready for the workshop.
