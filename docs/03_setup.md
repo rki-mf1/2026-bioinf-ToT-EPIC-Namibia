@@ -12,7 +12,7 @@ permalink: /setup/
 There are two ways to take part in the workshop:
 
 * **Using a workshop laptop**: Everything is already installed. Work through the [checklist](#using-a-workshop-laptop).
-* **Using your own laptop**: Connect to the [Wifi](#wifi) and follow the [setup guide](#using-your-own-laptop) to install the necessary software and download the data. 
+* **Using your own laptop**: Follow the [setup guide](#using-your-own-laptop) to install the necessary software and download the data. 
 * **Using your own Windows laptop**: First [set up WSL](#windows-laptops-set-up-wsl-first), which gives you Ubuntu Linux inside Windows. Then follow the [setup guide](#using-your-own-laptop) inside the Ubuntu terminal.
 
 {: .tip }
