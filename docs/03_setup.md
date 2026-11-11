@@ -9,10 +9,10 @@ permalink: /setup/
 
 # Setup
 
-There are three ways to take part in the workshop:
+There are two ways to take part in the workshop:
 
 * **Using a workshop laptop**: Everything is already installed. Work through the [checklist](#using-a-workshop-laptop).
-* **Using your own laptop**: Follow the [setup guide](#using-your-own-laptop) to install the necessary software and download the data. 
+* **Using your own laptop**: Connect to the [Wifi](#wifi) and follow the [setup guide](#using-your-own-laptop) to install the necessary software and download the data. 
 * **Using your own Windows laptop**: First [set up WSL](#windows-laptops-set-up-wsl-first), which gives you Ubuntu Linux inside Windows. Then follow the [setup guide](#using-your-own-laptop) inside the Ubuntu terminal.
 
 {: .tip }
@@ -178,14 +178,97 @@ Now continue with the [setup guide for your own laptop](#using-your-own-laptop).
 
 ## Using your own laptop
 
-Please follow these steps to set up your working environment. On a Windows laptop, [set up WSL](#windows-laptops-set-up-wsl-first) first and run all steps in the Ubuntu terminal.
+Please follow these steps in order to set up your working environment. The dataset download is started early because it takes the longest. On a Windows laptop, [set up WSL](#windows-laptops-set-up-wsl-first) first and run all steps in the Ubuntu terminal.
+
+### Git
+
+[Git](https://git-scm.com/) is a version control system. It keeps track of changes to files over time, so you can see what changed, when, and by whom, and go back to earlier versions if needed. Git is widely used to share code, and platforms such as [GitHub](https://github.com/) host Git repositories online.
+
+Check if you have Git installed:
+```bash
+git --version
+```
+
+Install Git with `apt`:
+```bash
+sudo apt update
+sudo apt install -y git
+```
+
+Verify the installation:
+```bash
+git --version
+```
 
 ### Workshop directory
 
-Clone the workshop directory:
+Clone the workshop directory into your home directory:
 ```bash
 cd && git clone https://github.com/rki-mf1/2026-bioinf-ToT-EPIC-Namibia.git
 ```
+
+### Miniforge
+
+[Miniforge](https://github.com/conda-forge/miniforge) provides `conda` and `mamba` through the community-maintained `conda-forge` channel. It is a fully open-source distribution and avoids reliance on Anaconda's default package repositories, whose use may be subject to commercial licensing terms.
+
+Check if you already have conda or mamba:
+```bash
+conda --version
+mamba --version
+```
+
+If you do not have it installed, you can install Miniforge.
+
+Download the installer:
+```bash
+wget -O Miniforge3.sh \
+  "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+```
+
+Run the installer:
+```bash
+bash Miniforge3.sh
+```
+
+Follow the prompts: press `Enter` to scroll through the licence, type `yes` to accept it, press `Enter` to keep the default install location, and answer `yes` when asked to initialize conda.
+
+**Close and reopen the terminal** for the changes to take effect.
+
+Remove the installer file:
+```bash
+rm Miniforge3.sh
+```
+
+Verify the installation:
+```bash
+conda --version
+```
+
+Add the `bioconda` channel after `conda-forge`. The `--append` option places a channel at the bottom of the list, so `conda-forge` stays the first priority.
+```bash
+conda config --append channels bioconda
+```
+
+Verify the channel order:
+```bash
+conda config --show channels
+```
+
+The output should list `conda-forge` first and `bioconda` second:
+```
+channels:
+  - conda-forge
+  - bioconda
+```
+
+### Toy dataset
+
+Start the dataset download now. It takes a while, so it runs while you install the remaining software.
+
+Follow the instruction [here](06_01_dataset.md) to download the toy datasets.
+
+{: .important }
+> Keep this terminal open until the download has finished. Open a **new terminal** for the next steps (on WSL: open Ubuntu again from the Start menu).
 
 ### Editor
 
@@ -218,7 +301,7 @@ sudo apt update
 sudo apt install -y codium
 ```
 
-Open VSCodium, open the directory `2026-bioinf-ToT-EPIC-Namibia` in VSCodium (Open Folder...) and continue the setup there.
+Open VSCodium and open the directory `2026-bioinf-ToT-EPIC-Namibia` (File -> Open Folder...). You can continue the setup in the VSCodium terminal.
 
 To open a terminal in VSCodium, select Terminal -> New Terminal in the top bar.
 
@@ -285,80 +368,6 @@ docker run hello-world
 
 If you see `Hello from Docker!`, Docker is working.
 
-### Git
-
-[Git](https://git-scm.com/) is a version control system. It keeps track of changes to files over time, so you can see what changed, when, and by whom, and go back to earlier versions if needed. Git is widely used to share code, and platforms such as [GitHub](https://github.com/) host Git repositories online.
-
-Check if you have Git installed:
-```bash
-git --version
-```
-
-Install Git with `apt`:
-```bash
-sudo apt update
-sudo apt install -y git
-```
-
-Verify the installation:
-```bash
-git --version
-```
-
-### Miniforge
-
-[Miniforge](https://github.com/conda-forge/miniforge) provides `conda` and `mamba` through the community-maintained `conda-forge` channel. It is a fully open-source distribution and avoids reliance on Anaconda's default package repositories, whose use may be subject to commercial licensing terms.
-
-Check if you already have conda or mamba:
-```bash
-conda --version
-mamba --version
-```
-
-If you do not have it installed, you can install Miniforge.
-
-Download the installer:
-```bash
-wget -O Miniforge3.sh \
-  "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-```
-
-Run the installer:
-```bash
-bash Miniforge3.sh
-```
-
-Follow the prompts and answer `yes` when asked to initialize conda.
-
-**Close and reopen the terminal** for the changes to take effect.
-
-Remove the installer file:
-```bash
-rm Miniforge3.sh
-```
-
-Verify the installation:
-```bash
-conda --version
-```
-
-Add the `bioconda` channel after `conda-forge`. The `--append` option places a channel at the bottom of the list, so `conda-forge` stays the first priority.
-```bash
-conda config --append channels bioconda
-```
-
-Verify the channel order:
-```bash
-conda config --show channels
-```
-
-The output should list `conda-forge` first and `bioconda` second:
-```
-channels:
-  - conda-forge
-  - bioconda
-```
-
 ### Nextflow
 
 [Nextflow](https://www.nextflow.io/) is a workflow manager. It runs multi-step bioinformatics pipelines and takes care of starting each step in its own container.
@@ -375,11 +384,6 @@ nextflow -version
 conda deactivate
 ```
 You should see a version number.
-
-### Toy dataset
-
-Follow the instruction [here](06_01_dataset.md) to download the toy datasets.
-This might take a while, so you can continue in a fresh terminal while the datasets are being downloaded.
 
 ### Check your setup
 
