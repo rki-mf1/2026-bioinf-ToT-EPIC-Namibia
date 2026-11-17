@@ -14,19 +14,13 @@ permalink: /linux_navigation/
 
 By the end of this lesson, you should be able to:
 
-- open and use the terminal comfortably
-- understand the current working directory
-- move through the filesystem with `cd`
-- understand `~`, `.`, `..`, absolute paths, and relative paths
-- create, edit, copy, move, rename, and remove files and directories
-- read built-in command documentation with `man` and `--help`
-
----
-
-## Working assumption
-
-This lesson assumes you cloned the repository into your **home** directory (`~`).
-All examples below use paths relative to that location.
+- Interpret parts of the shell prompt: `user`, `host`, current directory, and `$`
+- Break down a given shell command into command, option, argument
+- Describe the file system tree and distinguish absolute from relative path
+- Navigate the file system using `pwd`, `ls` and `cd`, using both absolute and relative paths
+- LO1 for file management
+- LO2 for file management
+- LO3 for file management 
 
 ---
 
@@ -49,63 +43,6 @@ Check where you are:
 ```bash
 pwd
 ```
-
----
-
-## The shell prompt
-
-![prompt](https://linuxconfig.org/images/linux-bash-prompt.jpg)
-
-When you open a terminal, the shell displays a **prompt**. The prompt indicates that the terminal is ready to receive a command.
-
-A typical prompt may look like this:
-
-```bash
-user@workstation:~/direcotory$ █
-```
-
-The prompt commonly contains:
-- `user`            → Current username
-- `@`               → Separates the username and computer name
-- `workstation`     → Name of the computer or server
-- `:`               → Separates the computer name and current directory
-- `~/direcotory`    → Current working directory
-- `$`               → Indicates that the shell is ready for a command
-
-The exact appearance of the prompt may differ between computers. For those who are curious, you can [customize your bash prompt](https://www.howtogeek.com/307701/how-to-customize-and-colorize-your-bash-prompt/) by changing the color and information contained in it.
-
-
----
-
-## Structure of a shell command
-
-Most shell commands follow this general structure:
-
-```bash
-command [options] [arguments]
-```
-
-For example:
-
-```
-ls -l ~
-```
-
-This command contains:
-
-| Component | Example | Purpose                                  |
-| --------- | ------- | ---------------------------------------- |
-| Command   | `ls`    | Specifies the action to perform          |
-| Option    | `-l`    | Modifies how the command behaves         |
-| Argument  | `~`     | Specifies what the command should act on |
-
-In this example, `ls` lists files, `-l` requests a detailed listing, and `~` specifies the home directory.
-
-{: .warning }
-> **Spaces** are important. The shell uses spaces to **separate** commands, options, and arguments!
->
-> For example:
-> `ls -l` is valid, while `ls-l` causes the shell to search for a command named `ls-l`.
 
 ---
 
