@@ -8,7 +8,7 @@ permalink: /dataset/
 
 # Downloading datasets
 
-We will use the **NCBI SRA Toolkit** to download and convert the sequencing
+We will use the NCBI SRA Toolkit to download and convert the sequencing
 data. The reads are downloaded with `prefetch`, converted to FASTQ with
 `fasterq-dump`, and compressed with `pigz`.
 
@@ -81,9 +81,7 @@ cd ~/2026-bioinf-ToT-EPIC-Namibia
 
 ## ONT
 
-This dataset contains Oxford Nanopore whole-genome sequencing reads from
-KPC-producing *Klebsiella pneumoniae* isolates described by
-[Ozer et al. 2026](https://doi.org/10.1128/mra.01447-25).
+This dataset contains Oxford Nanopore whole-genome sequencing reads from KPC-producing *Klebsiella pneumoniae* isolates described by [Ozer et al. 2026](https://doi.org/10.1128/mra.01447-25).
 
 {: .note }
 Oxford Nanopore reads are single-end. Therefore, `fasterq-dump` is used
@@ -97,9 +95,6 @@ cd ~/2026-bioinf-ToT-EPIC-Namibia
 
 # activate the Conda environment
 conda activate sra-tools
-
-# stop the script if a command fails
-set -euo pipefail
 
 # create directories for raw data and temporary files
 mkdir -p data/raw_data/kp_ont/tmp
@@ -156,6 +151,4 @@ data/raw_data/kp_ont/
 ```
 
 {: .important }
-The SRA files, uncompressed FASTQ files, and temporary conversion files may
-coexist during downloading. Ensure that several gigabytes of free disk space
-are available.
+The SRA files, uncompressed FASTQ files, and temporary conversion files may coexist during downloading. Ensure that several gigabytes of free disk space are available.
