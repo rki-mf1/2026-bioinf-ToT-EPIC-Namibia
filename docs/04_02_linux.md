@@ -1,12 +1,12 @@
 ---
-title: Linux - Viewing, Editing, Compressing, and Searching Files
+title: Linux - Navigation and File Management
 parent: Linux
 nav_order: 2
 nav_exclude: false
-permalink: /linux_files/
+permalink: /linux_navigation/
 ---
 
-# Viewing, Editing, Compressing, and Searching Files
+# Linux Navigation and File Management
 
 ---
 
@@ -14,373 +14,326 @@ permalink: /linux_files/
 
 By the end of this lesson, you should be able to:
 
-- search text with `grep`
-- combine commands using pipes (`|`)
-- extract columns from tabular files
-- write and run Bash scripts
+- Describe the file system tree and distinguish absolute from relative paths
+- Navigate the file system using `cd`, `pwd` and `ls`, using both absolute and relative paths
+- Create, copy, move, rename, and remove files and directories
+- Write text to files with `echo`, `>` and `>>`, and edit files with `nano`
+- View file contents with `cat`, `head`, `tail`, and `less`
 
---- 
+{: .note}
+This lesson builds on [First Commands and Getting Help](04_01_linux.md). If you are unsure about the prompt, `pwd`, `ls`, or `--help`, have a quick look there first.
 
-## Before you start
+---
+
+## 1. Moving around the filesystem
 
 Open a terminal and move into the workshop repository:
 
 ```bash
 cd ~/2026-bioinf-ToT-EPIC-Namibia
+pwd
 ```
 
-Create a safe practice area for this session:
+{: .tip}
+Type `cd ~/2026` and press **Tab** to autocomplete the path.
+
+Now try the following:
 
 ```bash
-mkdir -p scratch
+cd data
+pwd
+
+cd ..
+pwd
+
+cd ~
+pwd
+
+cd ~/2026-bioinf-ToT-EPIC-Namibia/data
+pwd
+
+cd -
+pwd
 ```
+
+### 🗝️ Key ideas
+
+- `~` = your home directory
+- `.` = the current directory
+- `..` = the parent directory
+- `cd -` = the directory you were in previously
 
 ---
 
-## 2. Compression with `gzip`
+## 2. Absolute and relative paths
 
-Genomics files are often very large, frequently reaching several gigabytes. To reduce storage requirements, they are commonly compressed with `gzip`. Although these files contain binary data and cannot be read directly with standard text tools, you can still inspect them from the command line without decompressing them first.
+An **absolute path** starts from the filesystem root `/`.
 
-First, let’s try seeing `.gz` file using `head` command.
+Example: `/home/username/2026-bioinf-ToT-EPIC-Namibia/data`
 
-```bash
-head data/tutorial_data/ERR16718636.fna.gz
-```
+A **relative path** starts from where you are right now.
 
-🎉 Congratulations! Instead of a readable FASTA file, you have discovered mysterious alien 👽 symbols. What actually happened is that head is showing you the raw compressed binary data of the `.gz` file — which looks like nonsense. To properly look inside compressed FASTA files, you need to use tools that understand `gzip` compression, such as:
-
-```bash
-zcat data/tutorial_data/ERR16718636.fna.gz | head
-```
-
-Let's copy it in scratch directory, and then uncompress it:
-
-```bash
-cp data/tutorial_data/ERR16718636.fna.gz scratch/ 
-cd scratch
-
-# Uncompress but keep compressed file to compare sizes
-gunzip -k ERR16718636.fna.gz
-ls -lh
-
-# Remove gz file
-rm ERR16718636.fna.gz
-ls -lh 
-```
-
-To compress file:
-
-```bash
-gzip ERR16718636.fna
-ls -lh
-```
-
-{: .discussion}
-> - What changed in the file size?
-> - Why is compression especially common for FASTA and FASTQ files?
-> - What is the difference between `gzip` and `gunzip`?
-
----
-
-## 3. Inspect compressed files without unpacking them
-
-Try and compare these commands:
-
-```bash
-cat ERR16718636.fna.gz
-```
-
-```bash
-zcat ERR16718636.fna.gz
-```
-
-```bash
-zcat ERR16718636.fna.gz | head
-```
-
-```bash
-zcat ERR16718636.fna.gz | tail
-```
-
-```bash
-zless ERR16718636.fna.gz
-```
-
-{: .discussion}
-> - Why is `cat` not useful on a `.gz` file?
-> - When is `zless` better than unzipping a large file first?
-
----
-
-## 4. Search text with `grep`
-
-Let's copy `amrfinderplus.tsv` in our current working directory to explore it:
+Example workflow:
 
 ```bash
 cd ~/2026-bioinf-ToT-EPIC-Namibia
-cp data/tutorial_data/amrfinderplus.tsv scratch/
+ls data
+
+cd data
+ls .
+ls ..
+```
+
+{: .discussion}
+> Run these commands and explain why they work:
+
+```bash
+cd ~/2026-bioinf-ToT-EPIC-Namibia
+ls data
+
+cd data
+ls ..
+
+cd ..
+cd ./data
+```
+
+---
+
+## 3. Create files and directories
+
+{: .tip}
+> **Naming files and directories in the Linux command line**
+> 
+> Good file and directory names make your work easier, especially when using tab completion, scripts, and command-line tools.
+> 
+> - Do not use spaces or special characters such as `<`, `>`, `|`, `\`, `:`, `(`, `)`, `&`, `;`, `?`, or `*`.
+> - Do not begin names with a dash `-` or a full stop `.`.
+> - Use letters, numbers, dashes `-`, and underscores `_`.
+> - Use a full stop `.` mainly for file extensions, such as `.pdf`, `.txt`, or `.fastq.gz`.
+> - Linux is case-sensitive, so `my_first_file.txt`, `My_First_File.txt`, and `my_FIRST_file.txt` are three different files.
+
+Create a safe practice area in the workshop repository and move into it:
+
+```bash
+cd ~/2026-bioinf-ToT-EPIC-Namibia
+mkdir -p scratch
 cd scratch
+pwd
 ```
 
-Search for one word:
+{: .note}
+The option `-p` tells `mkdir` not to complain if the directory already exists.
+
+Create a few files and directories:
 
 ```bash
-grep "OXA" amrfinderplus.tsv
-```
-
-Count matching lines:
-
-```bash
-grep -c "OXA" amrfinderplus.tsv
-```
-
-Search case-insensitively:
-
-```bash
-grep "oXa" amrfinderplus.tsv
-grep -i "OxA" amrfinderplus.tsv
-```
-
-Search for lines that start with a pattern:
-
-```bash
-zgrep "^>" ERR16718636.fna.gz
-```
-
-{: .discussion}
-> - What does `-c` do?
-> - What does `-i` do?
-> - What does `^>` mean?
-
----
-
-## 5. Pipes
-
-A pipe sends the output of one command into the next command.
-
-Examples:
-
-```bash
-cat amrfinderplus.tsv | wc -l
-```
-
-```bash
-grep "OXA" amrfinderplus.tsv | wc -l
-```
-
-```bash
-grep "OXA" amrfinderplus.tsv | less
-```
-
-```bash
-grep "OXA" amrfinderplus.tsv | head
-```
-
-{: .discussion}
-> - Why is `|` useful?
-> - Which part runs first in `grep "OXA" amrfinderplus.tsv | less`?
-
----
-
-## 6. Work with tabular data from the command line
-
-
-### Extract columns with `cut`
-
-Get the `Contig id` and `Element symbol` columns from `amrfinderplus.tsv`:
-
-```bash
-cut -f 3,7 amrfinderplus.tsv
-```
-
-Get only `Element symbol` containing `OXA`:
-
-```bash
-grep "OXA" amrfinderplus.tsv | cut -f 7
-```
-
-### Sort values with `sort`
-
-```bash
-grep "OXA" amrfinderplus.tsv | cut -f 7 | sort
-```
-
-### Find unique values with `uniq`
-
-```bash
-grep "OXA" amrfinderplus.tsv | cut -f 7 | sort | uniq
-```
-
-Count unique values:
-
-```bash
-grep "OXA" amrfinderplus.tsv | cut -f 7 | sort | uniq -c
-```
-
-Save unique OXA to a new file:
-
-```bash
-grep "OXA" amrfinderplus.tsv | cut -f 7 | sort | uniq -c > unique_OXA.txt
-```
-
-### Count lines with `wc`
-
-```bash
-wc amrfinderplus.tsv
-wc -l amrfinderplus.tsv
-wc -w amrfinderplus.tsv
-```
----
-
-## 7. Write your first Bash script
-
-Create a directory for scripts:
-
-```bash
-cd ~/2026-bioinf-ToT-EPIC-Namibia/scratch
-mkdir -p scripts
-cd scripts
-```
-
-Create a small script called `create_project.sh`:
-
-```bash
-nano create_project.sh
-```
-
-Paste this content:
-
-```bash
-#!/bin/bash
-
-TARGET_DIR=$1
-PROJECT_NAME=$2
-
-mkdir -p "$TARGET_DIR/$PROJECT_NAME"
-mkdir -p "$TARGET_DIR/$PROJECT_NAME/data"
-mkdir -p "$TARGET_DIR/$PROJECT_NAME/data/raw_data"
-mkdir -p "$TARGET_DIR/$PROJECT_NAME/analyses"
-mkdir -p "$TARGET_DIR/$PROJECT_NAME/scripts"
-mkdir -p "$TARGET_DIR/$PROJECT_NAME/docs"
-```
-
-Save and exit.
-
-### What this script introduces
-
-- `#!/bin/bash` — the shebang; tells the system to use Bash
-- `$1` — first argument
-- `$2` — second argument
-- `mkdir -p` — create directories, including parent directories if needed
-
----
-
-## 8. Make the script executable and run it
-
-Give the script execute permission:
-
-```bash
-ls -lh
-chmod +x create_project.sh
+touch notes.txt
+touch copy_me.txt
+mkdir drafts
+mkdir results
 ls -lh
 ```
 
-Run it explicitly with Bash:
+Add text to a file:
 
 ```bash
-bash create_project.sh ~/2026-bioinf-ToT-EPIC-Namibia/scratch/scripts demo_project
+echo "Hello Bioinformatics" > notes.txt
+cat notes.txt
 ```
 
-Run it directly:
+**Append** another line:
 
 ```bash
-./create_project.sh ~/2026-bioinf-ToT-EPIC-Namibia/scratch/scripts demo_project_2
-
-# or
-
-./create_project.sh . demo_project_3
-```
-
-Check the results:
-
-```bash
-ls demo_project
+echo "Linux is powerful." >> notes.txt
+cat notes.txt
 ```
 
 {: .discussion}
-> - What is the difference between `bash create_project.sh ...` and `./create_project.sh ...`?
-> - What happens if the script is not executable?
+> - What is the difference between `>` and `>>`?
+> - Why is it useful to keep practice work in a separate directory?
+
+Create a new file and open it in `nano`:
+
+```bash
+touch my_text_file.txt
+nano my_text_file.txt
+```
+
+Inside `nano`, try the following:
+
+- write two or three lines (e.g. tell us how much you like whales 🐋)
+- save with `Ctrl + O`
+- exit with `Ctrl + X`
+
+Show the result:
+
+```bash
+cat my_text_file.txt
+```
+
+### Useful nano shortcuts
+
+In the command overview at the bottom of the screen when in `nano`, `^` indicates **Ctrl** and `M-` indicates **Alt**. For example, `^O` means `Ctrl + O`.
+
+Useful nano shortcuts:
+
+- `Ctrl + O` (`^O`) — write/save the file
+- `Ctrl + X` (`^X`) — exit nano
+- `Ctrl + W` (`^W`) — search within the file
+- `Ctrl + K` (`^K`) — cut the current line
+- `Ctrl + U` (`^U`) — paste the cut text
 
 ---
 
-## 9. A simple loop script
+## 4. Copy files and directories
 
-Create another script:
+Copy a file into another file:
 
 ```bash
-nano creating_files.sh
+cp copy_me.txt copy_me_backup.txt
+ls
 ```
 
-Paste this content:
+Copy a file into a directory:
 
 ```bash
-#!/bin/bash
-
-for number in {1..4}; do
-  touch "file_${number}.txt"
-done
+cp notes.txt drafts/
+ls drafts
 ```
 
-Make it executable and run it:
+Copy a directory **recursively**:
 
 ```bash
-chmod +x creating_files.sh
-./creating_files.sh
+cp -r drafts drafts_copy
 ls
 ```
 
 {: .discussion}
-> - What is brace expansion in `{1..4}`?
-> - Why is it good practice to write variables as `${number}` instead of `$number` in scripts?
+> - When do you need `-r` with `cp`?
+> - What is the difference between copying a file and copying a directory?
 
 ---
 
-## 10. Optional | Script with if-else conditions
+## 5. Move and rename files
 
-Create one more script:
-
-```bash
-nano if_else.sh
-```
-
-Paste this content:
+Move a file into another directory:
 
 ```bash
-#!/bin/bash
-
-echo "Please enter a number:"
-read number
-
-if [ "$number" -gt 10 ]; then
-  echo "The number is greater than 10."
-elif [ "$number" -lt 10 ]; then
-  echo "The number is less than 10."
-else
-  echo "The number is equal to 10."
-fi
+mv copy_me_backup.txt results/
+ls results
 ```
 
-Run it:
+Rename a file:
 
 ```bash
-chmod +x if_else.sh
-./if_else.sh
+mv copy_me.txt renamed_file.txt
+ls
 ```
+
+Move and rename at the same time:
+
+```bash
+mv renamed_file.txt drafts/final_notes.txt
+ls drafts
+```
+
+---
+
+## 6. Remove files and directories
+
+Remove a file:
+
+```bash
+rm drafts/final_notes.txt
+ls drafts
+```
+
+Remove a directory and everything inside it:
+
+```bash
+rm -r drafts_copy
+ls
+```
+
+{: .caution }
+> Be careful with `rm`, especially with `rm -r`. Deleted files do not go to a recycle bin.
+
+---
+
+## 7. View file contents
+
+Use the file you already created:
+
+```bash
+cat notes.txt
+```
+
+Show only the first lines:
+
+```bash
+head notes.txt
+```
+
+Show only the last lines:
+
+```bash
+tail notes.txt
+```
+
+Open it page by page:
+
+```bash
+less notes.txt
+```
+
+### Useful `less` controls
+
+- `q` — quit
+- `/` followed by a pattern — search inside the file
+- `n` — next match
+- `p` — previous match
+- `Space` — next page
 
 {: .discussion}
-> - What happens if you enter `10`?
-> - What happens if you enter a letter instead of a number?
-> - Which operators compare numbers in Bash?
+> - When is `less` better than `cat`?
+> - Which commands are more useful for large files?
+
+
+---
+
+## 8. Mini challenge
+
+In `scratch` directory you created earlier, do the following:
+
+1. create a directory called `project_demo` and move into it
+2. create a file called `readme.txt` inside it
+3. write one line into that file (e.g. "I love whales")
+4. copy `readme.txt` file and name it `readme_copy.txt`
+5. rename `readme_copy.txt` to `readme_backup.txt`
+6. show the first lines of the original `readme.txt` file
+
+One possible solution:
+
+```bash
+# 1.
+cd ~/2026-bioinf-ToT-EPIC-Namibia/scratch
+mkdir project_demo
+cd project_demo
+
+# 2. and 3.
+echo "I love whales" > readme.txt
+
+# 4.
+cp readme.txt readme_copy.txt
+
+# 5.
+mv readme_copy.txt readme_backup.txt
+
+# 6.
+head readme.txt
+```
+
 
 ---
 
@@ -388,16 +341,21 @@ chmod +x if_else.sh
 
 | Command | Purpose |
 | --- | --- |
-| `gzip` | Compress a file |
-| `gunzip` | Uncompress a `.gz` file |
-| `zcat` | Print contents of a `.gz` file |
-| `zless` | View a `.gz` file page by page |
-| `grep` | Search text |
-| `grep -c` | Count matching lines |
-| `cut` | Extract selected columns |
-| `sort` | Sort lines |
-| `uniq` | Remove consecutive duplicates |
-| `wc` | Count lines, words, or characters |
-| `chmod +x` | Make a file executable |
-| `bash script.sh` | Run a script with Bash |
-| `./script.sh` | Run an executable script directly |
+| `cd` | Change directory |
+| `cd ~` | Go to your home directory |
+| `cd ..` | Go to the parent directory |
+| `cd -` | Go back to the previous directory |
+| `touch` | Create an empty file |
+| `echo "text" > file` | Write text to a file (overwrites it) |
+| `echo "text" >> file` | Append text to a file |
+| `nano` | Edit a text file in the terminal |
+| `mkdir` | Create a directory |
+| `cp` | Copy files |
+| `cp -r` | Copy directories recursively |
+| `mv` | Move or rename files or directories |
+| `rm` | Remove files |
+| `rm -r` | Remove directories recursively |
+| `cat` | Print a file |
+| `less` | View a file page by page |
+| `head` | Show first lines |
+| `tail` | Show last lines |
