@@ -9,11 +9,11 @@ permalink: /setup/
 
 # Setup
 
-There are two ways to take part in the workshop:
+There are three ways to take part in the workshop:
 
-* **Using a workshop laptop**: Everything is already installed and toy data was downloaded. Double check by working through the [checklist](#using-a-workshop-laptop).
-* **Using your own Linux laptop**: Follow the [setup guide](#using-your-own-laptop) to install the necessary software and download the data. You don't need to install WSL, only VSCodium. 
-* **Using your own Windows laptop**: First [set up WSL](#windows-laptops-set-up-wsl-first), which gives you Ubuntu Linux inside Windows. Then follow the [setup guide](#using-your-own-laptop) inside the VSCodium terminal.
+* **Using a workshop laptop**: Everything is already installed and the toy data is already downloaded. Double check by working through the [checklist](#using-a-workshop-laptop).
+* **Using your own Linux laptop**: Follow the [setup guide](#using-your-own-laptop) to install the necessary software and download the data. You do not need WSL.
+* **Using your own Windows laptop**: First [set up WSL](#windows-laptops-set-up-wsl-first), which gives you Ubuntu Linux inside Windows. Then follow the [setup guide](#using-your-own-laptop) in the terminal.
 
 ## Using a workshop laptop
 
@@ -39,9 +39,7 @@ Please connect to the Wifi. The password will be communicated by your facilitato
 Open VSCodium and open a terminal (Terminal -> New Terminal in the top bar). Run the following checks by copy pasting the given command into your terminal.
 
 {: .tip }
-> To paste into the terminal, press: 
-> `Ctrl` + `Shift` + `V` (Linux and WSL/Windows Terminal) or 
-> `Cmd` + `V` (macOS).
+> To paste into the terminal, press `Ctrl` + `Shift` + `V`.
 
 **Workshop directory**
 
@@ -49,11 +47,11 @@ Verify that the workshop folder exists:
 ```bash
 ls ~/2026-bioinf-ToT-EPIC-Namibia
 ```
-If you see `data` and `docs`, you have successfully cloned the workshop directory.
+If you see `data` and `docs`, the workshop directory is in place.
 
 **Toy dataset**
 
-The toy dataset is already on your laptop. Check that it is there with:
+Check that the toy dataset is there:
 
 ```bash
 ls ~/2026-bioinf-ToT-EPIC-Namibia/data/raw_data
@@ -110,73 +108,75 @@ You should see an environment named `nextflow`.
 Ideally, this has already been done before the start of the workshop. The workshop tools run on Linux. On a Windows laptop, you can use the Windows Subsystem for Linux (WSL). WSL runs a full Ubuntu Linux system inside Windows, so you can follow the same steps as on a Linux laptop.
 
 {: .important }
+> You need administrator rights on your laptop and Windows 10 (version 2004 or newer) or Windows 11. If you are unsure, ask a facilitator before you start.
+> To check your Windows version, open Settings → System → About.
 
-You need administrator rights on your laptop and Windows 10 (version 2004 or newer) or Windows 11. If you are unsure, ask a facilitator before you start.
+### Wifi
 
-To check your Windows version, open Settings → System → About.
+Please connect to the Wifi. The password will be communicated by your facilitators.
 
-Install WSL and Ubuntu
+### Install WSL and Ubuntu
 
 Follow this [guide](https://dev.to/brayandiazc/install-wsl-from-the-microsoft-store-111h) to install WSL and Ubuntu from the Microsoft Store.
 
-{: .note }
+When you open Ubuntu for the first time, you are asked to create a Linux username and password.
 
-When you type your password, nothing appears on the screen. This is normal on Linux. Type the password and press Enter. Remember this password: you will need it.
+{: .note }
+> When you type your password, nothing appears on the screen. This is normal on Linux. Type the password and press `Enter`. Remember this password: you need it whenever you use `sudo`.
+
+From now on, run all commands in the **Ubuntu terminal**.
+
+### Check the installation
+
+Check that you are running WSL version 2:
+```bash
+uname -r
+```
+The output should end with `WSL2`, for example:
+```
+5.15.167.4-microsoft-standard-WSL2
+```
+If it does not, ask a facilitator.
+
+### Update Ubuntu
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### Check that systemd is enabled
+
+Docker needs `systemd` inside WSL. Check the WSL configuration:
+```bash
+cat /etc/wsl.conf
+```
+You should see:
+```
+[boot]
+systemd=true
+```
+If these lines are missing, add them:
+```bash
+printf '[boot]\nsystemd=true\n' | sudo tee -a /etc/wsl.conf
+```
+Then close all Ubuntu windows, restart your laptop, and open Ubuntu again.
+
+### Notes for the next steps
+
+Now continue with the [setup guide for your own laptop](#using-your-own-laptop). Keep these WSL details in mind:
+
+* **Log out and log back in (Docker step):** close all Ubuntu windows, restart your laptop, then open Ubuntu again.
+* **Where to keep your files:** work in your Linux home directory (`~`). Your Windows files are visible under `/mnt/c/`, but working there is much slower.
 
 ---
 
 ## Using your own laptop
 
-Please follow these steps in order to set up your working environment. The dataset download is started early because it takes the longest. On a Windows laptop, [set up WSL](#windows-laptops-set-up-wsl-first) first and run all steps in the Ubuntu terminal.
+Please follow these steps in order to set up your working environment. The dataset download is started as soon as possible because it takes the longest. On a Windows laptop, [set up WSL](#windows-laptops-set-up-wsl-first) first and run all steps in the Ubuntu terminal.
 
-### Editor
+### Wifi
 
-[VSCodium](https://vscodium.com/) is a free and open-source code editor. It is built from the same source code as Microsoft's Visual Studio Code, but without Microsoft's branding and telemetry. You can use it to browse and edit files, view scripts and configuration files, and run commands in a built-in terminal, all in one window.
-
-In this workshop, we use VSCodium to open the workshop repository, look at the pipeline files and inspect results. You can use another text editor if you prefer, but VSCodium makes it easier to follow along.
-
-Add the GPG key of the VSCodium repository:
-```bash
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
-    | gpg --dearmor \
-    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
-```
-
-Add the repository:
-```bash
-echo -e 'Types: deb\nURIs: https://download.vscodium.com/debs\nSuites: vscodium\nComponents: main\nArchitectures: amd64 arm64\nSigned-by: /usr/share/keyrings/vscodium-archive-keyring.gpg' \
-    | sudo tee /etc/apt/sources.list.d/vscodium.sources
-```
-
-On Ubuntu 23.10 or older, use this command instead:
-```bash
-echo 'deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg] https://download.vscodium.com/debs vscodium main' \
-    | sudo tee /etc/apt/sources.list.d/vscodium.list
-```
-
-Install VSCodium:
-```bash
-sudo apt update
-sudo apt install -y codium
-```
-
-Open VSCodium and open the directory `2026-bioinf-ToT-EPIC-Namibia` (File -> Open Folder...). You can continue the setup in the VSCodium terminal.
-
-To open a terminal in VSCodium, select Terminal -> New Terminal in the top bar.
-
-### Workshop directory
-
-Clone the workshop directory into your home directory:
-```bash
-cd && git clone https://github.com/rki-mf1/2026-bioinf-ToT-EPIC-Namibia.git
-```
-
-### Toy dataset
-
-Start the dataset download now. It takes a while, so it runs while you install the remaining software. Follow the instruction [here](06_01_dataset.md) to download only the ONT toy datasets.
-
-{: .important }
-> Keep this terminal open until the download has finished. Open a new terminal for the next steps.
+Please connect to the Wifi. The password will be communicated by your facilitators.
 
 ### Git
 
@@ -187,7 +187,7 @@ Check if you have Git installed:
 git --version
 ```
 
-Install Git with `apt`:
+If you see a version number, continue with the next step. Otherwise, install Git with `apt`:
 ```bash
 sudo apt update
 sudo apt install -y git
@@ -197,6 +197,19 @@ Verify the installation:
 ```bash
 git --version
 ```
+
+### Workshop directory
+
+Clone the workshop directory into your home directory:
+```bash
+cd && git clone https://github.com/rki-mf1/2026-bioinf-ToT-EPIC-Namibia.git
+```
+
+Verify that the workshop folder exists:
+```bash
+ls ~/2026-bioinf-ToT-EPIC-Namibia
+```
+You should see `data` and `docs`.
 
 ### Miniforge
 
@@ -252,16 +265,86 @@ channels:
   - bioconda
 ```
 
+### Toy dataset
+
+Start the dataset download now. It takes a while, so it runs while you install the remaining software. Follow the instructions on the [Dataset page](06_01_dataset.md) to download only the ONT toy datasets.
+
+{: .important }
+> Keep this terminal open until the download has finished. Open a new terminal for the next steps.
+
+### Editor
+
+[VSCodium](https://vscodium.com/) is a free and open-source code editor. It is built from the same source code as Microsoft's Visual Studio Code, but without Microsoft's branding and telemetry. You can use it to browse and edit files, view scripts and configuration files, and run commands in a built-in terminal, all in one window.
+
+In this workshop, we use VSCodium to open the workshop repository, look at the pipeline files and inspect results. You can use another text editor if you prefer, but VSCodium makes it easier to follow along.
+
+Choose **one** of the two options below.
+
+#### Option 1: Install from the VSCodium website
+
+Follow the instructions for your operating system on the [VSCodium install page](https://vscodium.com/#install):
+
+* **Windows:** download the installer from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) (the file ending in `.exe`, e.g. `VSCodiumUserSetup-x64-<version>.exe`) and run it.
+* **Linux (Ubuntu):** download the `.deb` file from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) (e.g. `codium_<version>_amd64.deb`) and install it by double-clicking it.
+
+{: .note }
+> **Windows with WSL:** if you installed VSCodium on Windows, its terminal opens PowerShell by default. Switch to Ubuntu: in the terminal panel, click the small arrow next to `+` and choose **Ubuntu (WSL)**. Run all workshop commands in this Ubuntu terminal.
+
+#### Option 2: Install with the command line
+
+Run these commands in your (Ubuntu) terminal.
+
+Add the GPG key of the VSCodium repository:
+```bash
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+```
+
+Add the repository:
+```bash
+echo -e 'Types: deb\nURIs: https://download.vscodium.com/debs\nSuites: vscodium\nComponents: main\nArchitectures: amd64 arm64\nSigned-by: /usr/share/keyrings/vscodium-archive-keyring.gpg' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.sources
+```
+
+On Ubuntu 23.10 or older, use this command instead:
+```bash
+echo 'deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg] https://download.vscodium.com/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+```
+
+Install VSCodium:
+```bash
+sudo apt update
+sudo apt install -y codium
+```
+
+Start VSCodium from the terminal:
+```bash
+codium
+```
+
+{: .note }
+> **Windows with WSL:** the VSCodium window opens on your Windows desktop. If no window appears, ask a facilitator.
+
+#### Open the workshop directory
+
+Open VSCodium and open the directory `2026-bioinf-ToT-EPIC-Namibia` (File -> Open Folder...). You can continue the setup in the VSCodium terminal.
+
+To open a terminal in VSCodium, select Terminal -> New Terminal in the top bar.
+
 ### Docker
 
 [Docker](https://www.docker.com/) is a tool for running software in *containers*. A container bundles a program together with everything it needs to run, such as libraries, dependencies and the right versions of each. This means a tool behaves the same way on every computer, regardless of what else is installed.
 
 In this workshop, we use Docker together with Nextflow. Each step of the pipeline runs inside its own container, which Nextflow downloads and starts automatically. You don't need to install the individual bioinformatics tools yourself.
 
-Check if you have docker installed on your machine:
+Check if you have Docker installed on your machine:
 ```bash
 docker run hello-world
 ```
+
+If you see `Hello from Docker!`, continue with [Nextflow](#nextflow). Otherwise, install Docker as follows.
 
 Remove any conflicting old packages. It is fine if `apt` reports that none of them are installed.
 ```bash
@@ -306,7 +389,7 @@ Allow your user to run Docker without `sudo`. Nextflow calls Docker as your norm
 sudo usermod -aG docker $USER
 ```
 
-Log out and log back in for the group change to take effect.
+Log out and log back in for the group change to take effect (on WSL: close all Ubuntu windows and restart your laptop).
 
 Verify the installation:
 ```bash
@@ -334,4 +417,4 @@ You should see a version number.
 
 ### Check your setup
 
-Finally, work through the [checklist for workshop laptops](#checklist) and [run the checks](#run-the-checks). Skip the cloning step, as you have already cloned the workshop directory. If every check passes, your laptop is ready for the workshop.
+Finally, work through the [checklist for workshop laptops](#checklist) and [run the checks](#run-the-checks). If every check passes, your laptop is ready for the workshop.
