@@ -21,7 +21,7 @@ By the end of this lesson, you should be able to:
 - View file contents with `cat`, `head`, `tail`, and `less`
 
 {: .note}
-This lesson builds on [First Commands and Getting Help](04_01_linux.md). If you are unsure about the prompt, `pwd`, `ls`, or `--help`, have a quick look there first.
+This lesson builds on [First Commands and Getting Help](04_01_linux.md).
 
 ---
 
@@ -35,7 +35,7 @@ pwd
 ```
 
 {: .tip}
-Type `cd ~/2026` and press **Tab** to autocomplete the path.
+Type `cd ~/2026` and press Tab to autocomplete the path.
 
 Now try the following:
 
@@ -67,11 +67,11 @@ pwd
 
 ## 2. Absolute and relative paths
 
-An **absolute path** starts from the filesystem root `/`.
+An absolute path starts from the filesystem root `/`.
 
 Example: `/home/username/2026-bioinf-ToT-EPIC-Namibia/data`
 
-A **relative path** starts from where you are right now.
+A relative path starts from where you are right now.
 
 Example workflow:
 
@@ -103,7 +103,7 @@ cd ./data
 ## 3. Create files and directories
 
 {: .tip}
-> **Naming files and directories in the Linux command line**
+> Naming files and directories in the Linux command line.
 > 
 > Good file and directory names make your work easier, especially when using tab completion, scripts, and command-line tools.
 > 
@@ -142,7 +142,7 @@ echo "Hello Bioinformatics" > notes.txt
 cat notes.txt
 ```
 
-**Append** another line:
+Append another line:
 
 ```bash
 echo "Linux is powerful." >> notes.txt
@@ -174,7 +174,7 @@ cat my_text_file.txt
 
 ### Useful nano shortcuts
 
-In the command overview at the bottom of the screen when in `nano`, `^` indicates **Ctrl** and `M-` indicates **Alt**. For example, `^O` means `Ctrl + O`.
+In the command overview at the bottom of the screen when in `nano`, `^` indicates Ctrl and `M-` indicates Alt. For example, `^O` means `Ctrl + O`.
 
 Useful nano shortcuts:
 
