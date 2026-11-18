@@ -124,7 +124,7 @@ When you open Ubuntu for the first time, you are asked to create a Linux usernam
 {: .note }
 > When you type your password, nothing appears on the screen. This is normal on Linux. Type the password and press `Enter`. Remember this password: you need it whenever you use `sudo`.
 
-From now on, run all commands in the **Ubuntu terminal**.
+From now on, run all commands in the Ubuntu terminal.
 
 ### Check the installation
 
@@ -165,8 +165,8 @@ Then close all Ubuntu windows, restart your laptop, and open Ubuntu again.
 
 Now continue with the [setup guide for your own laptop](#using-your-own-laptop). Keep these WSL details in mind:
 
-* **Log out and log back in (Docker step):** close all Ubuntu windows, restart your laptop, then open Ubuntu again.
-* **Where to keep your files:** work in your Linux home directory (`~`). Your Windows files are visible under `/mnt/c/`, but working there is much slower.
+* Log out and log back in (Docker step): close all Ubuntu windows, restart your laptop, then open Ubuntu again.
+* Where to keep your files: work in your Linux home directory (`~`). Your Windows files are visible under `/mnt/c/`, but working there is much slower.
 
 ---
 
@@ -278,17 +278,17 @@ Start the dataset download now. It takes a while, so it runs while you install t
 
 In this workshop, we use VSCodium to open the workshop repository, look at the pipeline files and inspect results. You can use another text editor if you prefer, but VSCodium makes it easier to follow along.
 
-Choose **one** of the two options below.
+Choose one of the two options below.
 
 #### Option 1: Install from the VSCodium website
 
 Follow the instructions for your operating system on the [VSCodium install page](https://vscodium.com/#install):
 
-* **Windows:** download the installer from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) (the file ending in `.exe`, e.g. `VSCodiumUserSetup-x64-<version>.exe`) and run it.
-* **Linux (Ubuntu):** download the `.deb` file from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) (e.g. `codium_<version>_amd64.deb`) and install it by double-clicking it.
+* Windows: download the installer from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) (the file ending in `.exe`, e.g. `VSCodiumUserSetup-x64-<version>.exe`) and run it.
+* Linux (Ubuntu): download the `.deb` file from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) (e.g. `codium_<version>_amd64.deb`) and install it by double-clicking it.
 
 {: .note }
-> **Windows with WSL:** if you installed VSCodium on Windows, its terminal opens PowerShell by default. Switch to Ubuntu: in the terminal panel, click the small arrow next to `+` and choose **Ubuntu (WSL)**. Run all workshop commands in this Ubuntu terminal.
+> Windows with WSL: if you installed VSCodium on Windows, its terminal opens PowerShell by default. Switch to Ubuntu: in the terminal panel, click the small arrow next to `+` and choose **Ubuntu (WSL)**. Run all workshop commands in this Ubuntu terminal.
 
 #### Option 2: Install with the command line
 
@@ -325,7 +325,7 @@ codium
 ```
 
 {: .note }
-> **Windows with WSL:** the VSCodium window opens on your Windows desktop. If no window appears, ask a facilitator.
+> Windows with WSL: the VSCodium window opens on your Windows desktop. If no window appears, ask a facilitator.
 
 #### Open the workshop directory
 
