@@ -23,27 +23,21 @@ By the end of this lesson, you should be able to:
 
 ## Before you start
 
-Open a terminal:
-
-- **Linux laptop:** open the *Terminal* application.
-- **Windows laptop:** open the *Ubuntu* app (WSL).
-- **VSCodium:** open a new terminal via *Terminal → New Terminal*.
-
-When a terminal opens, you start in your **home directory**. Stay there for this whole lesson. Moving around the file system comes in the [next lesson](04_02_linux.md).
+Open a terminal in VSCodium via Terminal → New Terminal. You start in your home directory. Stay there for this whole lesson. Moving around the file system comes in the [next lesson](04_02_linux.md).
 
 ---
 
 ## 1. Read your prompt
 
-Look at the last line in your terminal. This is your **prompt**. It may look similar to this:
+Look at the last line in your terminal. This is your prompt. It may look similar to this:
 
 ```bash
 user@workstation:~$
 ```
 
 {: .task}
-> - Write your own prompt on paper and label the **user**, the **host**, the **current directory**, and the `$`.
-> - Compare your prompt with your neighbour's. Which parts are different, and why?
+> - Write your own prompt on paper and label the `user`, the `host`, the current directory, and the `$`.
+> - Compare your prompt with your neighbor's. Which parts are different, and why?
 
 Now ask the shell where you are:
 
@@ -53,9 +47,6 @@ pwd
 
 {: .discussion}
 > - Compare the output of `pwd` with the current directory shown in your prompt. What does `~` stand for?
-
-{: .note}
-If you need a reminder, have a look at [the shell prompt](04_00_linux.md#the-shell-prompt) on the Linux introduction page.
 
 ---
 
@@ -78,13 +69,13 @@ ls -lt
 ```
 
 {: .tip}
-> Several short options can be **combined** behind one dash:
+> Several short options can be combined behind one dash:
 >
 > - `ls -lh` is the same as `ls -l -h`
 > - The order does not matter: `ls -lt` and `ls -tl` give the same result
 
 {: .task}
-> For each command above, name the **command**, the **option(s)** and the **argument(s)**. Which commands have no option or no argument?
+> For each command above, name the command, the option(s) and the argument(s). Which commands have no option or no argument?
 
 {: .discussion}
 > - What is the difference between `ls`, `ls -l`, and `ls -lh`?
@@ -121,19 +112,19 @@ mkdir --help
 > - Which `cp` option lets you copy directories recursively?
 
 {: .task}
-> **Stretch task:** try `man cd`. Why does it fail? Find out how to get help for `cd` anyway (hint: `help cd`).
+> Stretch task: try `man cd`. Why does it fail? Find out how to get help for `cd` anyway (hint: `help cd`).
 
 ---
 
 ## 4. Useful terminal habits
 
-Try these **shortcuts**:
+Try these shortcuts:
 
-- Press the `↑` **Up Arrow** to reuse previous commands.
-- Type `cle` and press **Tab** to autocomplete `clear`.
-- Type `ls ~/2026` and press **Tab** to autocomplete the path.
+- Press the `↑` Up Arrow to reuse previous commands.
+- Type `cle` and press Tab to autocomplete `clear`.
+- Type `ls ~/2026` and press Tab to autocomplete the path.
 
-Linux is **case-sensitive**:
+Linux is case-sensitive:
 
 - `clear` works
 - `CLEAR` does not
