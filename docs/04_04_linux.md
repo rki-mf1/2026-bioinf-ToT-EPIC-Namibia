@@ -1,5 +1,5 @@
 ---
-title: Linux - Viewing, Editing, Compressing, and Searching Files
+title: Viewing, Editing, Compressing, and Searching Files
 parent: Linux
 nav_order: 4
 nav_exclude: false
