@@ -1,12 +1,12 @@
 ---
-title: Linux - File Management
+title: File and Folder Management
 parent: Linux
 nav_order: 3
 nav_exclude: false
 permalink: /linux_file_management/
 ---
 
-# Linux File Management
+# File and Folder Management
 
 ---
 
