@@ -58,6 +58,8 @@ mkdir results
 ls -lh
 ```
 
+`touch` creates an empty file only if it doesn’t exist, otherwise it updates the file’s modification time.
+
 Add text to a file:
 
 ```bash
@@ -192,17 +194,19 @@ Use the file you already created:
 cat notes.txt
 ```
 
-Show only the first lines:
+Show only the first 10 lines:
 
 ```bash
 head notes.txt
 ```
 
-Show only the last lines:
+Show only the last 10 lines:
 
 ```bash
 tail notes.txt
 ```
+
+`head` and `tail` show 10 lines by default. Use the `-n` option to choose a different number of lines.
 
 Open it page by page:
 
@@ -214,8 +218,8 @@ less notes.txt
 
 - `q` — quit
 - `/` followed by a pattern — search inside the file
-- `n` — next match
-- `p` — previous match
+- `n` — Repeat previous search
+- `N` — Repeat previous search in reverse direction
 - `Space` — next page
 
 {: .discussion}
@@ -236,7 +240,9 @@ In `scratch` directory you created earlier, do the following:
 5. rename `readme_copy.txt` to `readme_backup.txt`
 6. show the first lines of the original `readme.txt` file
 
-One possible solution:
+
+<details markdown="block">
+<summary>One possible solution</summary>
 
 ```bash
 # 1.
@@ -257,8 +263,8 @@ mv readme_copy.txt readme_backup.txt
 head readme.txt
 ```
 
+</details>
 
----
 
 ---
 
@@ -266,7 +272,7 @@ head readme.txt
 
 | Command | Purpose |
 | --- | --- |
-| `touch` | Create an empty file |
+| `touch` | Create an empty file if it doesn’t exist, otherwise updates the file’s modification time |
 | `echo "text" > file` | Write text to a file (overwrites it) |
 | `echo "text" >> file` | Append text to a file |
 | `nano` | Edit a text file in the terminal |
