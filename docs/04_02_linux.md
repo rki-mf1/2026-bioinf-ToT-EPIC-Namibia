@@ -1,12 +1,12 @@
 ---
-title: Linux - Navigation and File Management
+title: Navigation
 parent: Linux
 nav_order: 2
 nav_exclude: false
 permalink: /linux_navigation/
 ---
 
-# Linux Navigation and File Management
+# Navigation on the Command Line
 
 ---
 
