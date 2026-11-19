@@ -135,7 +135,7 @@ Move into the workshop folder using an absolute path. Check with `pwd`.
 <summary>Solution</summary>
 
 ```bash
-cd /home/<your-username>/2026-bioinf-ToT-EPIC-Namibia
+cd /home/$USER/2026-bioinf-ToT-EPIC-Namibia
 pwd
 ```
 
@@ -241,7 +241,7 @@ Now run them. Was your prediction correct?
 <details markdown="block">
 <summary>Solution</summary>
 
-`/home/<your-username>/2026-bioinf-ToT-EPIC-Namibia`
+`/home/$USER/2026-bioinf-ToT-EPIC-Namibia`
 
 Two times `..` takes you up two levels: from `tutorial_data` to `data`, then to the workshop folder.
 
@@ -287,7 +287,7 @@ A relative path starts from where you are. There is no `data` inside `docs`, so 
 cd ../data/tutorial_data
 
 # absolute
-cd /home/<your-username>/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data
+cd /home/$USER/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data
 ```
 
 </details>
@@ -304,7 +304,7 @@ You are in `docs`. Write three different `cd` commands that all take you to `dat
 ```bash
 cd ../data/tutorial_data                                          # relative
 cd ~/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data              # starting from ~
-cd /home/<your-username>/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data   # absolute
+cd /home/$USER/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data   # absolute
 ```
 
 Which one would still work if you were in a different directory?
