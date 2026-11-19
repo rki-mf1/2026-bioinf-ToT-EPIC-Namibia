@@ -1,12 +1,12 @@
 ---
-title: Linux - First Commands and Getting Help
+title: First Commands and Getting Help
 parent: Linux
 nav_order: 1
 nav_exclude: false
 permalink: /linux_first_commands/
 ---
 
-# Linux Basics: Prompt, First Commands, and Getting Help
+# Basics: Prompt, First Commands, and Getting Help
 
 ---
 
