@@ -16,9 +16,7 @@ By the end of this lesson, you should be able to:
 
 - Describe the file system tree and distinguish absolute from relative paths
 - Navigate the file system using `cd`, `pwd` and `ls`, using both absolute and relative paths
-- Create, copy, move, rename, and remove files and directories
-- Write text to files with `echo`, `>` and `>>`, and edit files with `nano`
-- View file contents with `cat`, `head`, `tail`, and `less`
+
 
 {: .note}
 This lesson builds on [First Commands and Getting Help](04_01_linux.md).
@@ -61,7 +59,10 @@ pwd
 - `~` = your home directory
 - `.` = the current directory
 - `..` = the parent directory
-- `cd -` = the directory you were in previously
+- `cd` = change directory, accepts paths as arguments
+- `cd ~` or  `cd` = change to home directory
+- `cd ..` = change to parent directory 
+- `cd -` = change to the directory you were in previously
 
 ---
 
@@ -69,7 +70,7 @@ pwd
 
 An absolute path starts from the filesystem root `/`.
 
-Example: `/home/username/2026-bioinf-ToT-EPIC-Namibia/data`
+Example: `/home/$USER/2026-bioinf-ToT-EPIC-Namibia/data`
 
 A relative path starts from where you are right now.
 
@@ -100,240 +101,265 @@ cd ./data
 
 ---
 
-## 3. Create files and directories
+## 3. Practice: navigating the file system
 
-{: .tip}
-> Naming files and directories in the Linux command line.
-> 
-> Good file and directory names make your work easier, especially when using tab completion, scripts, and command-line tools.
-> 
-> - Do not use spaces or special characters such as `<`, `>`, `|`, `\`, `:`, `(`, `)`, `&`, `;`, `?`, or `*`.
-> - Do not begin names with a dash `-` or a full stop `.`.
-> - Use letters, numbers, dashes `-`, and underscores `_`.
-> - Use a full stop `.` mainly for file extensions, such as `.pdf`, `.txt`, or `.fastq.gz`.
-> - Linux is case-sensitive, so `my_first_file.txt`, `My_First_File.txt`, and `my_FIRST_file.txt` are three different files.
+Work through the exercises at your own pace. You do not need to finish all of them. Start with the warm-up, then continue as far as you get.
 
-Create a safe practice area in the workshop repository and move into it:
+After every `cd`, check where you are with `pwd`. Use Tab to complete paths.
+
+{: .note}
+The folder `data/raw_data/kp_ont` only exists if you have followed the setup instructions. 
+
+### Warm-up
+
+**Exercise 1: Where am I?**
+
+Open a new terminal and run `pwd`. Which directory are you in? Where is it in the file system tree?
+
+<details markdown="block">
+<summary>Solution</summary>
 
 ```bash
-cd ~/2026-bioinf-ToT-EPIC-Namibia
-mkdir -p scratch
-cd scratch
 pwd
 ```
 
-{: .note}
-The option `-p` tells `mkdir` not to complain if the directory already exists.
+A new terminal starts in your home directory, `/home/$USER`. This is the same as `~`.
 
-Create a few files and directories:
+</details>
+
+**Exercise 2: Go to the workshop folder with an absolute path**
+
+Move into the workshop folder using an absolute path. Check with `pwd`.
+
+<details markdown="block">
+<summary>Solution</summary>
 
 ```bash
-touch notes.txt
-touch copy_me.txt
-mkdir drafts
-mkdir results
-ls -lh
+cd /home/<your-username>/2026-bioinf-ToT-EPIC-Namibia
+pwd
 ```
 
-Add text to a file:
+An absolute path always starts with `/`. It works no matter where you are.
+
+</details>
+
+**Exercise 3: Look without moving**
+
+You are in the workshop folder. List what is in `data` without moving into it. Then check with `pwd` that you have not moved.
+
+<details markdown="block">
+<summary>Solution</summary>
 
 ```bash
-echo "Hello Bioinformatics" > notes.txt
-cat notes.txt
+ls data
+pwd
 ```
 
-Append another line:
+`ls` takes a path as an argument. You can look into a directory without going there.
+
+</details>
+
+**Exercise 4: Two levels down in one step**
+
+From the workshop folder, move into `tutorial_data` with one single `cd` command. How many files are in it?
+
+<details markdown="block">
+<summary>Solution</summary>
 
 ```bash
-echo "Linux is powerful." >> notes.txt
-cat notes.txt
-```
-
-{: .discussion}
-> - What is the difference between `>` and `>>`?
-> - Why is it useful to keep practice work in a separate directory?
-
-Create a new file and open it in `nano`:
-
-```bash
-touch my_text_file.txt
-nano my_text_file.txt
-```
-
-Inside `nano`, try the following:
-
-- write two or three lines (e.g. tell us how much you like whales 🐋)
-- save with `Ctrl + O`
-- exit with `Ctrl + X`
-
-Show the result:
-
-```bash
-cat my_text_file.txt
-```
-
-### Useful nano shortcuts
-
-In the command overview at the bottom of the screen when in `nano`, `^` indicates Ctrl and `M-` indicates Alt. For example, `^O` means `Ctrl + O`.
-
-Useful nano shortcuts:
-
-- `Ctrl + O` (`^O`) — write/save the file
-- `Ctrl + X` (`^X`) — exit nano
-- `Ctrl + W` (`^W`) — search within the file
-- `Ctrl + K` (`^K`) — cut the current line
-- `Ctrl + U` (`^U`) — paste the cut text
-
----
-
-## 4. Copy files and directories
-
-Copy a file into another file:
-
-```bash
-cp copy_me.txt copy_me_backup.txt
+cd data/tutorial_data
 ls
 ```
 
-Copy a file into a directory:
+There are three files: `ERR16718636.fna.gz`, `amrfinderplus.tsv` and `bactopia_samplesheet.txt`.
+
+</details>
+
+### Core practice
+
+**Exercise 5: Up and over**
+
+You are in `data/tutorial_data`. Move into `docs` with one relative path.
+
+<details markdown="block">
+<summary>Solution</summary>
 
 ```bash
-cp notes.txt drafts/
-ls drafts
+cd ../../docs
+pwd
 ```
 
-Copy a directory **recursively**:
+The first `..` takes you up to `data`, the second up to the workshop folder. From there you go into `docs`.
+
+</details>
+
+**Exercise 6: List a directory somewhere else**
+
+You are in `docs`. Without leaving `docs`, list the contents of `prodigal_training_files`.
+
+<details markdown="block">
+<summary>Solution</summary>
 
 ```bash
-cp -r drafts drafts_copy
+ls ../data/prodigal_training_files
+```
+
+You should see one file: `Klebsiella_pneumoniae.trn`.
+
+</details>
+
+**Exercise 7: Visit the root**
+
+Move to the root of the file system and list its contents. Can you find `home`? Then go back to your home directory with the shortest command you know.
+
+<details markdown="block">
+<summary>Solution</summary>
+
+```bash
+cd /
 ls
+cd
+pwd
 ```
 
-{: .discussion}
-> - When do you need `-r` with `cp`?
-> - What is the difference between copying a file and copying a directory?
+`cd` without an argument takes you home. `cd ~` does the same.
 
----
+</details>
 
-## 5. Move and rename files
+**Exercise 8: Predict, then check**
 
-Move a file into another directory:
+Write down what `pwd` will print **before** you run the commands:
 
 ```bash
-mv copy_me_backup.txt results/
-ls results
+cd ~/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data
+cd ../..
+pwd
 ```
 
-Rename a file:
+Now run them. Was your prediction correct?
+
+<details markdown="block">
+<summary>Solution</summary>
+
+`/home/<your-username>/2026-bioinf-ToT-EPIC-Namibia`
+
+Two times `..` takes you up two levels: from `tutorial_data` to `data`, then to the workshop folder.
+
+</details>
+
+**Exercise 9: Jump back and forth**
+
+Go to `data/tutorial_data` in the workshop folder. Then go to `/usr/bin`. Now run `cd -` twice and check `pwd` after each one. What does `cd -` do?
+
+<details markdown="block">
+<summary>Solution</summary>
 
 ```bash
-mv copy_me.txt renamed_file.txt
+cd ~/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data
+cd /usr/bin
+cd -
+pwd
+cd -
+pwd
+```
+
+`cd -` takes you back to the directory you were in before. Running it again takes you back again, so you switch between two places.
+
+</details>
+
+**Exercise 10: Fix the error**
+
+You are in `docs` and run:
+
+```bash
+cd data/tutorial_data
+```
+
+You get `No such file or directory`. Why? Fix it in two ways: once with a relative path, once with an absolute path.
+
+<details markdown="block">
+<summary>Solution</summary>
+
+A relative path starts from where you are. There is no `data` inside `docs`, so the path does not exist from here.
+
+```bash
+# relative
+cd ../data/tutorial_data
+
+# absolute
+cd /home/<your-username>/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data
+```
+
+</details>
+
+### Challenge
+
+**Exercise 11: Three ways to the same place**
+
+You are in `docs`. Write three different `cd` commands that all take you to `data/tutorial_data`. Test each one (go back to `docs` in between).
+
+<details markdown="block">
+<summary>Solution</summary>
+
+```bash
+cd ../data/tutorial_data                                          # relative
+cd ~/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data              # starting from ~
+cd /home/<your-username>/2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data   # absolute
+```
+
+Which one would still work if you were in a different directory?
+
+</details>
+
+**Exercise 12: Find the file size**
+
+Use `ls --help` to find the options that show file sizes in a human-readable format. Then show the size of `ERR16718636.fna.gz` from your home directory, without moving.
+
+<details markdown="block">
+<summary>Solution</summary>
+
+```bash
+cd ~
+ls -lh 2026-bioinf-ToT-EPIC-Namibia/data/tutorial_data/ERR16718636.fna.gz
+```
+
+`-l` shows the long format with the size, `-h` makes the size human-readable (for example `1.4M` instead of a long number).
+
+</details>
+
+**Exercise 13: Hidden entries**
+
+In the workshop folder, compare `ls` with `ls -a`. What extra entries do you see? What are `.` and `..`?
+
+<details markdown="block">
+<summary>Solution</summary>
+
+```bash
+cd ~/2026-bioinf-ToT-EPIC-Namibia
 ls
+ls -a
 ```
 
-Move and rename at the same time:
+`ls -a` also shows hidden entries, whose names start with a full stop, for example `.git` and `.gitignore`. `.` is the current directory and `..` is the parent directory.
+
+</details>
+
+**Exercise 14: The longest way up**
+
+You are in `data/raw_data/kp_ont`. What is the shortest relative path to `docs`? Write it down first, then test it.
+
+<details markdown="block">
+<summary>Solution</summary>
 
 ```bash
-mv renamed_file.txt drafts/final_notes.txt
-ls drafts
+cd ~/2026-bioinf-ToT-EPIC-Namibia/data/raw_data/kp_ont
+cd ../../../docs
+pwd
 ```
 
----
+Three levels up (`kp_ont` → `raw_data` → `data` → workshop folder), then into `docs`.
 
-## 6. Remove files and directories
-
-Remove a file:
-
-```bash
-rm drafts/final_notes.txt
-ls drafts
-```
-
-Remove a directory and everything inside it:
-
-```bash
-rm -r drafts_copy
-ls
-```
-
-{: .caution }
-> Be careful with `rm`, especially with `rm -r`. Deleted files do not go to a recycle bin.
-
----
-
-## 7. View file contents
-
-Use the file you already created:
-
-```bash
-cat notes.txt
-```
-
-Show only the first lines:
-
-```bash
-head notes.txt
-```
-
-Show only the last lines:
-
-```bash
-tail notes.txt
-```
-
-Open it page by page:
-
-```bash
-less notes.txt
-```
-
-### Useful `less` controls
-
-- `q` — quit
-- `/` followed by a pattern — search inside the file
-- `n` — next match
-- `p` — previous match
-- `Space` — next page
-
-{: .discussion}
-> - When is `less` better than `cat`?
-> - Which commands are more useful for large files?
-
-
----
-
-## 8. Mini challenge
-
-In `scratch` directory you created earlier, do the following:
-
-1. create a directory called `project_demo` and move into it
-2. create a file called `readme.txt` inside it
-3. write one line into that file (e.g. "I love whales")
-4. copy `readme.txt` file and name it `readme_copy.txt`
-5. rename `readme_copy.txt` to `readme_backup.txt`
-6. show the first lines of the original `readme.txt` file
-
-One possible solution:
-
-```bash
-# 1.
-cd ~/2026-bioinf-ToT-EPIC-Namibia/scratch
-mkdir project_demo
-cd project_demo
-
-# 2. and 3.
-echo "I love whales" > readme.txt
-
-# 4.
-cp readme.txt readme_copy.txt
-
-# 5.
-mv readme_copy.txt readme_backup.txt
-
-# 6.
-head readme.txt
-```
-
+</details>
 
 ---
 
@@ -345,17 +371,3 @@ head readme.txt
 | `cd ~` | Go to your home directory |
 | `cd ..` | Go to the parent directory |
 | `cd -` | Go back to the previous directory |
-| `touch` | Create an empty file |
-| `echo "text" > file` | Write text to a file (overwrites it) |
-| `echo "text" >> file` | Append text to a file |
-| `nano` | Edit a text file in the terminal |
-| `mkdir` | Create a directory |
-| `cp` | Copy files |
-| `cp -r` | Copy directories recursively |
-| `mv` | Move or rename files or directories |
-| `rm` | Remove files |
-| `rm -r` | Remove directories recursively |
-| `cat` | Print a file |
-| `less` | View a file page by page |
-| `head` | Show first lines |
-| `tail` | Show last lines |
