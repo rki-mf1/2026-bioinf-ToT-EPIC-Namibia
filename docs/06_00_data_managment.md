@@ -7,7 +7,7 @@ has_toc: false
 permalink: /data_management/
 ---
 
-# 🗂️ Data Management
+# Data Management
 
 Good project organisation makes bioinformatics analyses easier to understand, reproduce, share, and maintain. A clear structure is especially important when a project contains many samples, large sequencing files, several tools, and multiple analysis versions.
 
@@ -25,26 +25,27 @@ By the end of this lesson, you should be able to:
 
 ---
 
-## 📁 Organise each project consistently
+## Organise each project consistently
 
 Create one main directory for each project and use the same structure whenever possible. 
 
 Here is an idea for one way to organize it:
 
-<pre class="directory-tree"><code>project_name/
+```bash
+project_name/
 ├── README.md
 ├── data/
 │   ├── raw/
 │   └── metadata/
 ├── envs/
 ├── scripts/
-├── results/
-│   ├── qc/
-│   ├── assembly/
-│   └── typing/
+├── analyses/
+│   ├── 01_qc/
+│   ├── 02_assembly/
+│   └── 03_typing/
 ├── logs/
-└── reports/</code></pre>
-
+└── reports/
+```
 
 
 | Directory        | Contents                                       |
@@ -53,18 +54,18 @@ Here is an idea for one way to organize it:
 | `data/metadata/` | Sample information and data dictionaries       |
 | `envs/`          | Conda environment files and software records   |
 | `scripts/`       | Reusable commands, scripts, and workflow files |
-| `results/`       | Analysis outputs organised by analysis step    |
+| `analyses/`      | Analyses outputs organized by analysis step    |
 | `logs/`          | Program output, error messages, and run logs   |
 | `reports/`       | Figures, tables, summaries, and final reports  |
 
 {: .important }
-> Keep the original raw data **unchanged**. Perform analyses on linked or clearly identified working files rather than editing the original FASTQ files.
-
-Use a short `README.md` to document the project purpose, dataset, directory structure, analysis steps, and responsible people.
+> Keep the original raw data **unchanged**.
+> Perform analyses on linked or clearly identified working files rather than editing the original FASTQ files.
+> Use a short `README.md` to document the project purpose, dataset, directory structure, analysis steps, and responsible people.
 
 ---
 
-## 🏷️ Name files clearly
+## Name files clearly
 
 File names should be informative, consistent, and easy to process with command-line tools.
 
@@ -100,7 +101,7 @@ assembly_latest.fasta
 
 ---
 
-## 🧾 Record software and analysis steps
+## Record software and analysis steps
 
 Bioinformatics results depend on software versions, databases, parameters, and input files. Record enough information to repeat the analysis later.
 
@@ -118,11 +119,8 @@ Use a separate Conda environment for each workflow or group of compatible tools.
 Export a reproducible environment description:
 
 ```bash
-conda env export --from-history > envs/environment.yml
+conda env export > envs/environment.yml
 ```
-
-{: .note }
-> `conda env export --from-history` exports the packages explicitly requested in the environment, but does not pin all resolved dependency versions, so it may not recreate the exact same package set later.
 
 Record tool versions when running an analysis:
 
@@ -136,7 +134,7 @@ quast.py --version >> logs/software_versions.txt
 
 ---
 
-## 💾 Save storage space carefully
+## Save storage space carefully
 
 Sequencing projects can quickly consume large amounts of disk space. Check storage use regularly:
 
@@ -157,7 +155,9 @@ To reduce unnecessary storage use:
 Create a symbolic link to a shared file:
 
 ```bash
-ln -s /shared/data/NAM_001.fastq.gz data/raw/NAM_001.fastq.gz
+cd ~/2026-bioinf-ToT-EPIC-Namibia
+ln -s data/prodigal_training_files/Klebsiella_pneumoniae.trn scratch/ln_Klebsiella_pneumoniae.trn
+ll scratch
 ```
 
 {: .warning }
@@ -165,22 +165,22 @@ ln -s /shared/data/NAM_001.fastq.gz data/raw/NAM_001.fastq.gz
 
 ---
 
-## 🔐 Protect and verify your data
+## Protect and verify your data
 
 Important data should exist in more than one location. Maintain an appropriate backup of raw data, metadata, scripts, and final results.
 
 Checksums can be used to confirm that files were copied or transferred correctly:
 
 ```bash
-sha256sum data/raw/NAM_001.fastq.gz > data/raw/NAM_001.fastq.gz.sha256
-sha256sum -c data/raw/NAM_001.fastq.gz.sha256
+sha256sum data/raw_data/kp_ont_R9.4_sequencing/1_GR_13.fastq.gz > scratch/1_GR_13.fastq.gz.sha256
+sha256sum -c scratch/1_GR_13.fastq.gz.sha256
 ```
 
 Sensitive sample or patient information must be stored and shared according to the applicable data-protection and institutional requirements.
 
 ---
 
-## ✅ Project checklist
+## Project checklist
 
 Before considering an analysis complete, confirm that:
 

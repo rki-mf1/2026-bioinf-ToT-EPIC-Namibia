@@ -89,7 +89,7 @@ mkdir -p filtered_reads/by_quality
 Create a symlink the paired-end FASTQ files into the `input` directory.
 
 ```bash
-ln -s ~/2026-bioinf-ToT-EPIC-Namibia/data/raw_data/kp input/
+ln -s ~/2026-bioinf-ToT-EPIC-Namibia/data/raw_data/kp/ERR16718582_{1,2}.fastq.gz input/
 ```
 
 Check that both files were copied successfully.
@@ -204,7 +204,7 @@ ls -lh filtered_reads/default_params/
 
 ## 5. Open the HTML report
 
-Now you can download the `.html` file and open it on your presonal computer.
+Now you can download the `.html` file and open it on your personal computer.
 
 If server has `firefox` setup the HTML report can be opened with a web browser.
 

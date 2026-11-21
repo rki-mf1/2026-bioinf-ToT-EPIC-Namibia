@@ -11,22 +11,88 @@ permalink: /nanoplot/
 {: .objectives }
 > By the end of this practical, you should be able to:
 >
-> - LO1
+> - run `NanoPlot` on Oxford Nanopore FASTQ files
+> - inspect read length and read quality distributions
+> - interpret basic ONT read quality statistics
+> - decide whether the reads are suitable for downstream analyses
 
 ---
 
 ## Overview
 
+`NanoPlot` is a quality-control and visualization tool for Oxford Nanopore sequencing data.
+
+The input data are located in: `~/2026-bioinf-ToT-EPIC-Namibia/data/raw_data/kp_ont`
+
 ---
 
-## 1. 
+## 1. Setup the working environment
+
+We are now working in the project folder, not in `scratch/` anymore.
+
+Navigate to your project folder:
+
+```bash
+cd ~/2026-bioinf-ToT-EPIC-Namibia
+```
+
+Activate the `NanoPlot` environment:
+
+```bash
+conda activate nanoplot
+```
+
+Create your output directory:
+
+```bash
+mkdir -p analyses/nanoplot/
+```
 
 ---
 
-## 2. 
+## 2. Inspect the data
+
+View the whole file content without wrapped lines:
+
+```bash
+less -S data/raw_data/kp_ont/AR-1049-MV.fastq.gz
+```
+
+... with lines wrapped:
+
+```bash
+less data/raw_data/kp_ont/AR-1049-MV.fastq.gz
+```
+
 ---
 
-## 3. 
+## 3. Run `NanoPlot` on toy data
+
+Make sure you are in your project folder:
+
+```bash
+cd ~/2026-bioinf-ToT-EPIC-Namibia
+```
+
+Run `NanoPlot` on the FASTQ file from **AR-1049-MV**:
+
+```bash
+NanoPlot \
+    --fastq data/raw_data/kp_ont/AR-1049-MV.fastq.gz \
+    --title "AR-1049-MV (raw)" \
+    --prefix AR-1049-MV_raw_ \
+    --threads 8 \
+    --outdir analyses/nanoplot/AR-1049-MV
+```
+
+{: .note }
+The command is split into individual lines per option and argument for readability reasons. Alternatively, you can run a one-liner.
+
+Run `NanoPlot` directly on the FASTQ file from **AR-1049-MV**:
+
+```bash
+NanoPlot --fastq data/raw_data/kp_ont/AR-1049-MV.fastq.gz --title "AR-1049-MV (raw)" --prefix AR-1049-MV_raw_ --N50 --threads 4 --outdir analyses/nanoplot/AR-1049-MV
+```
 
 Important options:
 
@@ -41,10 +107,24 @@ Important options:
 
 ---
 
-## 4. 
+## 4. Inspect the output files
+
+List the generated files:
+
+```bash
+ls -lh analyses/nanoplot/AR-1049-MV/
+```
+
+Important outputs include:
+
+```text
+AR-1049-MV_raw_NanoPlot-report.html
+AR-1049-MV_raw_NanoStats.txt
+```
 
 ### 5. Interpret the report
-Open the `NanoPlot` report in VScodium.
+
+Open the `NanoPlot` report in VSCodium.
 
 Pay particular attention to:
 
@@ -59,22 +139,17 @@ Pay particular attention to:
 {: .discussion }
 > Use the NanoPlot report to answer:
 >
-> 1. How many reads were generated for `barcode08`?
+> 1. How many reads were generated for `AR-1049-MV`?
 > 2. What is the median read quality?
 > 3. What is the median read length?
-> 4. Is the read-length distribution consistent with approximately 2-kb amplicons?
-> 5. Are there many very short or unusually long reads?
-> 6. Based on the QC results, would you proceed with genome reconstruction?
+> 4. Are there many very short or unusually long reads?
+> 5. Based on the QC results, would you proceed with genome reconstruction?
 
 ---
-
-## 5. 
----
-
 
 ## 📌 Summary
 
-In this practical, you used `NanoPlot` to inspect the quality of ONT sequencing reads.
+In this practical, you used `NanoPlot` to inspect the quality of ONT reads.
 
 You examined:
 
@@ -82,6 +157,3 @@ You examined:
 - read length
 - read N50
 - read-length distribution
-- whether the reads match the expected amplicon size
-
-The reads will next be used directly for genome reconstruction with `artic-mpxv-nf`.
