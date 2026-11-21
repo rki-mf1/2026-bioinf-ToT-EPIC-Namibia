@@ -3,10 +3,10 @@ title: Bash scripts
 parent: Linux
 nav_order: 5
 nav_exclude: false
-permalink: /linux_files/
+permalink: /linux_scripts/
 ---
 
-# Viewing, Editing, Compressing, and Searching Files
+# Bash script
 
 ---
 

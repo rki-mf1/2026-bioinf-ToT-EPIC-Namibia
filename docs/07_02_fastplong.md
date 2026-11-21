@@ -79,8 +79,8 @@ cd ~/2026-bioinf-ToT-EPIC-Namibia
 Create a working directory for this practical:
 
 ```bash
-mkdir -p analysis/fastplong
-cd analysis/fastplong
+mkdir -p analyses/fastplong
+cd analyses/fastplong
 ```
 
 Create directories for the input reads and the different filtering
@@ -327,20 +327,20 @@ Install MultiQC in the active Conda environment:
 ```bash
 conda create -n multiqc -c conda-forge -c bioconda multiqc -y
 
-conda activete multiqc
+conda activate multiqc
 ```
 
 Create an output directory and run MultiQC on all `fastplong` results:
 
 ```bash
 cd ~/2026-bioinf-ToT-EPIC-Namibia
-mkdir -p ~/2026-bioinf-ToT-EPIC-Namibia/analysis/multiqc
+mkdir -p ~/2026-bioinf-ToT-EPIC-Namibia/analyses/multiqc
 
 multiqc \
-  analysis/fastplong/filtered_reads/ \
+  analyses/fastplong/filtered_reads/ \
   --module fastp \
   --filename fastplong_multiqc.html \
-  --outdir analysis/multiqc \
+  --outdir analyses/multiqc \
   --force
 ```
 

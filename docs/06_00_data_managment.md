@@ -1,10 +1,10 @@
 ---
-title: Data Managment
+title: Data Management
 nav_order: 6
 nav_exclude: false
 has_children: true
 has_toc: false
-permalink: /data_managment/
+permalink: /data_management/
 ---
 
 # 🗂️ Data Management
@@ -120,6 +120,9 @@ Export a reproducible environment description:
 ```bash
 conda env export --from-history > envs/environment.yml
 ```
+
+{: .note }
+> `conda env export --from-history` exports the packages explicitly requested in the environment, but does not pin all resolved dependency versions, so it may not recreate the exact same package set later.
 
 Record tool versions when running an analysis:
 

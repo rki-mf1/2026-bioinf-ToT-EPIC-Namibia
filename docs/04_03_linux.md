@@ -26,15 +26,16 @@ This lesson builds on [Navigation](04_02_linux.md).
 ## 1. Create files and directories
 
 {: .tip}
-> Naming files and directories in the Linux command line.
-> 
-> Good file and directory names make your work easier, especially when using tab completion, scripts, and command-line tools.
-> 
-> - Do not use spaces or special characters such as `<`, `>`, `|`, `\`, `:`, `(`, `)`, `&`, `;`, `?`, or `*`.
-> - Do not begin names with a dash `-` or a full stop `.`.
-> - Use letters, numbers, dashes `-`, and underscores `_`.
-> - Use a full stop `.` mainly for file extensions, such as `.pdf`, `.txt`, or `.fastq.gz`.
-> - Linux is case-sensitive, so `my_first_file.txt`, `My_First_File.txt`, and `my_FIRST_file.txt` are three different files.
+> **Naming files and directories**
+>
+> Clear, consistent names make files easier to find and safer to use with tab completion, scripts, and command-line tools.
+>
+> - **Stick to safe characters:** Use letters, numbers, hyphens (`-`), and underscores (`_`).
+> - **Avoid spaces (` `) and special characters:** Characters like `<`, `>`, `|`, `\`, `:`, `(`, `)`, `&`, `;`, `?`, `*`, are allowed by the filesystem, but they have special meaning in the shell and require quoting or escaping.
+> - **Don't start names with a dash (`-`):** Command-line tools may misinterpret the filename as an option or flag.
+> - **Use a leading dot (`.`) intentionally:** Starting a name with a dot marks it as hidden by convention (use `ls -a` to view hidden files).
+> - **Reserve periods (`.`) for extensions:** Use them to indicate file formats, such as `.pdf`, `.txt`, or `.fastq.gz`.
+> - **Be mindful of capitalization:** Linux filesystems are typically case-sensitive, meaning `my_file.txt`, `My_File.txt`, and `MY_FILE.txt` are treated as three separate files.
 
 Create a safe practice area in the workshop repository and move into it:
 

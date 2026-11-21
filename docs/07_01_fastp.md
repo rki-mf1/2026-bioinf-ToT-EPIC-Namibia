@@ -89,7 +89,7 @@ mkdir -p filtered_reads/by_quality
 Create a symlink the paired-end FASTQ files into the `input` directory.
 
 ```bash
-ln -s /shared/fastq_files input/
+ln -s ~/2026-bioinf-ToT-EPIC-Namibia/data/raw_data/kp input/
 ```
 
 Check that both files were copied successfully.

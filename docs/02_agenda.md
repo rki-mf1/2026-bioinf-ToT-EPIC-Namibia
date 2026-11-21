@@ -10,7 +10,7 @@ permalink: /agenda/
 # Agenda
 
 The ToT begins with a virtual preparation phase, followed by two weeks of in-person training at UNAM. 
-The online phase includes sessions that introduce participants to key concepts of lerner-centered training design and allow for joint refinement of thematic focus areas ahead of the on-site component.
+The online phase includes sessions that introduce participants to key concepts of learner-centered training design and allow for joint refinement of thematic focus areas ahead of the on-site component.
 
 ## Virtual preparation phase
 

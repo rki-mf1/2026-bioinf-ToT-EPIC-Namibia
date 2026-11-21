@@ -79,7 +79,7 @@ As outlined in the letter of commitment, we ask you to complete the tutorials in
 
 ### 3. Install Visual Studio Codium
 
-Instructions can be found here: [Install VSCodium](https://code.visualstudio.com/docs](https://vscodium.com/#install)
+Instructions can be found here: [Install VSCodium](https://vscodium.com/)
 
 ### 4. Install WSL
 

@@ -86,7 +86,7 @@ When you open a terminal, the shell displays a **prompt**. The prompt indicates 
 A typical prompt may look like this:
 
 ```bash
-user@workstation:~/direcotory$ █
+user@workstation:~/directory$ █
 ```
 
 The prompt commonly contains:

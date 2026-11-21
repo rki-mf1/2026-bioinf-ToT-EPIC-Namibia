@@ -1,10 +1,10 @@
 ---
-title: Software Managment
+title: Software Management
 nav_order: 5
 nav_exclude: false
 has_children: true
 has_toc: false
-permalink: /software_managment/
+permalink: /software_management/
 ---
 
 # Software and Workflow Management in Bioinformatics
