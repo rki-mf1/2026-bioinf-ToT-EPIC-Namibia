@@ -24,7 +24,6 @@ Your laptop has already been set up for the workshop. You (most likely) do not n
 - [ ] Wifi connected
 - [ ] VSCodium opens
 - [ ] Workshop directory exists
-- [ ] Docker runs without `sudo`
 - [ ] Git is installed
 - [ ] Conda is installed, with `conda-forge` and `bioconda` channels
 - [ ] Nextflow Conda environment exists
@@ -47,7 +46,7 @@ Verify that the workshop folder exists:
 ```bash
 ls ~/2026-bioinf-ToT-EPIC-Namibia
 ```
-If you see `data` and `docs`, the workshop directory is in place.
+If you see `data` and `docs` among others, the workshop directory is in place.
 
 **Toy dataset**
 
@@ -71,13 +70,6 @@ kp  kp_ont
 
 Both outputs are fine. If `kp_ont` is missing, or you get the message `No such file or directory`, please inform a facilitator.
 
-**Docker**
-
-```bash
-docker run hello-world
-```
-You should see `Hello from Docker!`. If you get a `permission denied` error, your user is not in the `docker` group. Ask a facilitator.
-
 **Git**
 
 ```bash
@@ -100,12 +92,11 @@ conda env list
 ```
 You should see an environment named `nextflow`.
 
-
 ---
 
 ## Windows laptops: set up WSL first
 
-Ideally, this has already been done before the start of the workshop. The workshop tools run on Linux. On a Windows laptop, you can use the Windows Subsystem for Linux (WSL). WSL runs a full Ubuntu Linux system inside Windows, so you can follow the same steps as on a Linux laptop.
+Ideally, this has already been done before the start of the workshop. The workshop tools run on Linux. On a Windows laptop, you can use the Windows Subsystem for Linux (WSL). WSL runs a full Ubuntu Linux system inside Windows.
 
 {: .important }
 > You need administrator rights on your laptop and Windows 10 (version 2004 or newer) or Windows 11. If you are unsure, ask a facilitator before you start.
@@ -124,55 +115,14 @@ When you open Ubuntu for the first time, you are asked to create a Linux usernam
 {: .note }
 > When you type your password, nothing appears on the screen. This is normal on Linux. Type the password and press `Enter`. Remember this password: you need it whenever you use `sudo`.
 
-From now on, run all commands in the Ubuntu terminal.
 
-### Check the installation
-
-Check that you are running WSL version 2:
-```bash
-uname -r
-```
-The output should end with `WSL2`, for example:
-```
-5.15.167.4-microsoft-standard-WSL2
-```
-If it does not, ask a facilitator.
-
-### Update Ubuntu
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-### Check that systemd is enabled
-
-Docker needs `systemd` inside WSL. Check the WSL configuration:
-```bash
-cat /etc/wsl.conf
-```
-You should see:
-```
-[boot]
-systemd=true
-```
-If these lines are missing, add them:
-```bash
-printf '[boot]\nsystemd=true\n' | sudo tee -a /etc/wsl.conf
-```
-Then close all Ubuntu windows, restart your laptop, and open Ubuntu again.
-
-### Notes for the next steps
-
-Now continue with the [setup guide for your own laptop](#using-your-own-laptop). Keep these WSL details in mind:
-
-* Log out and log back in (Docker step): close all Ubuntu windows, restart your laptop, then open Ubuntu again.
-* Where to keep your files: work in your Linux home directory (`~`). Your Windows files are visible under `/mnt/c/`, but working there is much slower.
+Now continue with the [setup guide for your own laptop](#using-your-own-laptop).
 
 ---
 
 ## Using your own laptop
 
-Please follow these steps in order to set up your working environment. The dataset download is started as soon as possible because it takes the longest. On a Windows laptop, [set up WSL](#windows-laptops-set-up-wsl-first) first and run all steps in the Ubuntu terminal.
+Please follow these steps in order to set up your working environment. Copy and paste the commands into the terminal. The dataset download is started as soon as possible because it takes the longest. On a Windows laptop, [set up WSL](#windows-laptops-set-up-wsl-first) first and run all steps in the Ubuntu terminal.
 
 ### Wifi
 
@@ -276,19 +226,19 @@ Start the dataset download now. It takes a while, so it runs while you install t
 
 [VSCodium](https://vscodium.com/) is a free and open-source code editor. It is built from the same source code as Microsoft's Visual Studio Code, but without Microsoft's branding and telemetry. You can use it to browse and edit files, view scripts and configuration files, and run commands in a built-in terminal, all in one window.
 
-In this workshop, we use VSCodium to open the workshop repository, look at the pipeline files and inspect results. You can use another text editor if you prefer, but VSCodium makes it easier to follow along.
+In this workshop, we use VSCodium to open the workshop repository, look at files and inspect results. You can use another text editor if you prefer, but VSCodium makes it easier to follow along.
 
 Choose one of the two options below.
 
-#### Option 1: Install from the VSCodium website
+#### Option 1: Install from the VSCodium website (recommended)
 
 Follow the instructions for your operating system on the [VSCodium install page](https://vscodium.com/#install):
 
 * Windows: download the installer from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) (the file ending in `.exe`, e.g. `VSCodiumUserSetup-x64-<version>.exe`) and run it.
-* Linux (Ubuntu): download the `.deb` file from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) (e.g. `codium_<version>_amd64.deb`) and install it by double-clicking it.
+* Linux (Ubuntu): download the `.deb` file from the [VSCodium releases](https://github.com/vscodium/vscodium/releases) and install it by double-clicking it.
 
 {: .note }
-> Windows with WSL: if you installed VSCodium on Windows, its terminal opens PowerShell by default. Switch to Ubuntu: in the terminal panel, click the small arrow next to `+` and choose **Ubuntu (WSL)**. Run all workshop commands in this Ubuntu terminal.
+> Windows with WSL: if you installed VSCodium on Windows, its terminal opens PowerShell by default. Switch to Ubuntu: in the terminal panel, click the small arrow next to `+` and choose **Ubuntu (WSL)**. From now on, run all workshop commands in this Ubuntu terminal.
 
 #### Option 2: Install with the command line
 
@@ -332,71 +282,6 @@ codium
 Open VSCodium and open the directory `2026-bioinf-ToT-EPIC-Namibia` (File -> Open Folder...). You can continue the setup in the VSCodium terminal.
 
 To open a terminal in VSCodium, select Terminal -> New Terminal in the top bar.
-
-### Docker
-
-[Docker](https://www.docker.com/) is a tool for running software in *containers*. A container bundles a program together with everything it needs to run, such as libraries, dependencies and the right versions of each. This means a tool behaves the same way on every computer, regardless of what else is installed.
-
-In this workshop, we use Docker together with Nextflow. Each step of the pipeline runs inside its own container, which Nextflow downloads and starts automatically. You don't need to install the individual bioinformatics tools yourself.
-
-Check if you have Docker installed on your machine:
-```bash
-docker run hello-world
-```
-
-If you see `Hello from Docker!`, continue with [Nextflow](#nextflow). Otherwise, install Docker as follows.
-
-Remove any conflicting old packages. It is fine if `apt` reports that none of them are installed.
-```bash
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
-  sudo apt remove -y $pkg
-done
-```
-
-Install the prerequisites and add Docker's official GPG key:
-```bash
-sudo apt update
-sudo apt install -y ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-```
-
-Add the Docker repository:
-```bash
-sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
-Types: deb
-URIs: https://download.docker.com/linux/ubuntu
-Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
-Components: stable
-Signed-By: /etc/apt/keyrings/docker.asc
-EOF
-```
-
-Install Docker Engine:
-```bash
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-Start Docker and enable it at boot:
-```bash
-sudo systemctl enable --now docker
-```
-
-Allow your user to run Docker without `sudo`. Nextflow calls Docker as your normal user, so this step is required.
-```bash
-sudo usermod -aG docker $USER
-```
-
-Log out and log back in for the group change to take effect (on WSL: close all Ubuntu windows and restart your laptop).
-
-Verify the installation:
-```bash
-docker run hello-world
-```
-
-If you see `Hello from Docker!`, Docker is working.
 
 ### Nextflow
 
