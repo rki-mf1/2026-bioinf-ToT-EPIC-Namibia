@@ -118,12 +118,14 @@ Use a separate Conda environment for each workflow or group of compatible tools.
 Export a reproducible environment description:
 
 ```bash
+mkdir -p envs
 conda env export > envs/environment.yml
 ```
 
 Record tool versions when running an analysis:
 
 ```bash
+mkdir -p logs
 flye --version > logs/software_versions.txt
 quast.py --version >> logs/software_versions.txt
 ```
@@ -139,7 +141,7 @@ Sequencing projects can quickly consume large amounts of disk space. Check stora
 
 ```bash
 du -sh .
-du -sh data/* results/*
+du -sh data/* analyses/*
 ```
 
 To reduce unnecessary storage use:
@@ -171,8 +173,8 @@ Important data should exist in more than one location. Maintain an appropriate b
 Checksums can be used to confirm that files were copied or transferred correctly:
 
 ```bash
-sha256sum data/raw_data/kp_ont_R9.4_sequencing/1_GR_13.fastq.gz > scratch/1_GR_13.fastq.gz.sha256
-sha256sum -c scratch/1_GR_13.fastq.gz.sha256
+sha256sum data/raw_data/kp_ont/AR-1049-MV.fastq.gz > scratch/AR-1049-MV.fastq.gz.sha256
+sha256sum -c scratch/AR-1049-MV.fastq.gz.sha256
 ```
 
 Sensitive sample or patient information must be stored and shared according to the applicable data-protection and institutional requirements.

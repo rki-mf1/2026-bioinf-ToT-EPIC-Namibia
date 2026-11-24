@@ -1,6 +1,6 @@
 ---
 title: Dataset
-parent: Data Managment
+parent: Data Management
 nav_order: 1
 nav_exclude: false
 permalink: /dataset/

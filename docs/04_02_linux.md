@@ -374,9 +374,6 @@ Three levels up (`kp_ont` → `raw_data` → `data` → workshop folder), then i
 | `.` | Current directory |
 | `..` | Parent directory |
 | `cd <PATH>` | Change directory |
-| `cd ~` | Go to your home directory |
-| `cd` withoth <PATH> | Go to your home directory (same as `cd ~`) |
+| `cd ~` or `cd` | Go to your home directory |
 | `cd ..` | Go to the parent directory |
-| `cd -` | Go back to the previous directory |
-| `cd` or `cd ~` | Go to the home directory |
 | `cd -` | Return to the previous directory |

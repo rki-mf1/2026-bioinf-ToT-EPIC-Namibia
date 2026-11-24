@@ -87,11 +87,6 @@ The `conda activate` command lets you switch to a specific environment.
 You can use any of the environments that were listed in the output of `conda env list` command. 
 Once you activate a environment you will be able to use the software that is installed in that environment.
 
-```bash
-# try to use fastp
-fastp
-```
-
 Before activating the environment, let’s try running fastp.
 
 ```bash

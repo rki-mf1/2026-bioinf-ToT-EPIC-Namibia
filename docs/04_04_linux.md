@@ -1,5 +1,5 @@
 ---
-title: Viewing, Editing, Compressing, and Searching Files
+title: Viewing, Compressing, and Searching Files
 parent: Linux
 nav_order: 4
 nav_exclude: false
@@ -242,8 +242,10 @@ wc -w amrfinderplus.tsv
 | `zcat` | Print contents of a `.gz` file |
 | `zless` | View a `.gz` file page by page |
 | `grep` | Search text |
+| `zgrep` | Search compressed text files |
 | `grep -c` | Count matching lines |
 | `cut` | Extract selected columns |
 | `sort` | Sort lines |
 | `uniq` | Remove consecutive duplicates |
 | `wc` | Count lines, words, and bytes |
+| `|` | Send one command’s output to another command |

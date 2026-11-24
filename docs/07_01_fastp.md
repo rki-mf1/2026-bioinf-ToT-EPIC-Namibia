@@ -40,6 +40,9 @@ In this practical, we will use `fastp` to inspect and filter paired-end Illumina
 
 `fastp` automatically creates HTML and JSON reports. The HTML report can be opened in a web browser and is useful for checking read counts, read quality, GC content, duplication, adapter content, insert-size information, and filtering results.
 
+{: .note}
+>  **Prerequisite:** Complete the Illumina section of [Datasets](06_01_dataset.md) before starting. This practical expects paired reads under `data/raw_data/kp/`.
+
 ---
 
 ## 1. Activate the Conda environment

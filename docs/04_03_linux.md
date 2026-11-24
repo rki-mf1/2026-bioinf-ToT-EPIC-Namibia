@@ -272,7 +272,7 @@ head readme.txt
 
 | Command | Purpose |
 | --- | --- |
-| `touch` | Create an empty file if it doesn’t exist, otherwise updates the file’s modification time |
+| `touch` | Create an empty file if it doesn’t exist; otherwise, update its modification time |
 | `echo "text" > file` | Write text to a file (overwrites it) |
 | `echo "text" >> file` | Append text to a file |
 | `nano` | Edit a text file in the terminal |

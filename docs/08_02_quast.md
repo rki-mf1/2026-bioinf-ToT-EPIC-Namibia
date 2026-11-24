@@ -174,6 +174,9 @@ Check whether:
 
 ## 5. Compare all four assemblies
 
+{: .note }
+> This comparison requires Flye assemblies for all four isolates. The Flye tutorial demonstrates one isolate first; complete the same practical for the other isolates before running this comparison.
+
 After all four Flye assemblies have been generated, QUAST can compare them in one report.
 
 Confirm that the assemblies exist:
