@@ -1,6 +1,6 @@
 ---
 title: Conda
-parent: Software Managment
+parent: Software Management
 nav_order: 1
 nav_exclude: false
 permalink: /conda/
