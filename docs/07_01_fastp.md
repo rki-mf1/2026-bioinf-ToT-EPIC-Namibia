@@ -10,17 +10,16 @@ permalink: /fastp/
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this practical, you should be able to:
-
-- understand why read quality control is important before downstream analysis
-- run `fastp` on Illumina paired-end FASTQ files
-- create filtered paired FASTQ output files
-- generate and open an HTML quality-control report
-- understand adapter trimming and quality filtering for short-read data
-- filter reads by minimum length after trimming
-- compare quality-control results generated with different parameters
+{: .objectives }
+> By the end of this practical, you should be able to:
+> 
+> - understand why read quality control is important before downstream analysis
+> - run `fastp` on Illumina paired-end FASTQ files
+> - create filtered paired FASTQ output files
+> - generate and open an HTML quality-control report
+> - understand adapter trimming and quality filtering for short-read data
+> - filter reads by minimum length after trimming
+> - compare quality-control results generated with different parameters
 
 ---
 

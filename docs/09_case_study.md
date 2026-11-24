@@ -15,6 +15,17 @@ The purpose of this activity is to apply the tools, workflows, and analytical ap
 
 ---
 
+{: .objectives }
+> By the end of the case study block, participants should be able to:
+> 
+> 1. Translate a research question into a practical analysis plan.
+> 2. Apply methods learned during the training to a real dataset.
+> 3. Work collaboratively on a bioinformatics project.
+> 4. Document and interpret analytical results.
+> 5. Communicate findings clearly to others.
+
+---
+
 ## 🗓️ Schedule
 
 | Date             | Session                                              |
@@ -75,13 +86,3 @@ The 30 min presentation should include:
 Did the available data and selected methods allow the group to answer the original research question? What additional data or analyses might be needed?
 
 ---
-
-## 🎯 Learning outcomes
-
-By the end of the case study block, participants should be able to:
-
-1. Translate a research question into a practical analysis plan.
-2. Apply methods learned during the training to a real dataset.
-3. Work collaboratively on a bioinformatics project.
-4. Document and interpret analytical results.
-5. Communicate findings clearly to others.

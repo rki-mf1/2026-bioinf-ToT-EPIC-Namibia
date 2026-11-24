@@ -10,16 +10,15 @@ permalink: /conda/
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this practical, you should be able to:
-
-- understand why software environments are important in bioinformatics
-- list available Conda environments
-- create a new Conda environment
-- activate and deactivate Conda environments
-- check which software is available inside an environment
-- understand why a tool may not be available before activating the correct environment
+{: .objectives }
+> By the end of this practical, you should be able to:
+>
+> - understand why software environments are important in bioinformatics
+> - list available Conda environments
+> - create a new Conda environment
+> - activate and deactivate Conda environments
+> - check which software is available inside an environment
+> - understand why a tool may not be available before activating the correct environment
 
 ---
 

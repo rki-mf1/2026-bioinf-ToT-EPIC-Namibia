@@ -16,6 +16,17 @@ The aim of the activity is not to present your case study results again. It is t
 
 ---
 
+{: .objectives }
+> By the end of the microteaching block, you will be able to:
+> 
+> 1. Formulate clear, measurable learning objectives for your session using action verbs from Bloom's taxonomy.
+> 2. Design a short teaching session that follows the 4C Map and includes activities that apply the Six Trumps.
+> 4. Explain a technical step of the genome reconstruction workflow in accessible language, using examples or a live demonstration.
+> 5. Facilitate learner involvement through questions, discussion, or hands-on practice while keeping to the allotted time.
+> 6. Reflect on your own teaching and give and receive constructive feedback.
+
+---
+
 ## 🗓️ Schedule
 
 | Date             | Session                                   |
@@ -88,13 +99,3 @@ After each teaching session, you will reflect on your experience and receive con
 How did you decide which information from your case study was essential for your learners? What did you leave out, and why?
 
 ---
-
-## 🎯 Learning outcomes
-
-By the end of the microteaching block, you will be able to:
-
-1. Formulate clear, measurable learning objectives for your session using action verbs from Bloom's taxonomy.
-2. Design a short teaching session that follows the 4C Map and includes activities that apply the Six Trumps.
-4. Explain a technical step of the genome reconstruction workflow in accessible language, using examples or a live demonstration.
-5. Facilitate learner involvement through questions, discussion, or hands-on practice while keeping to the allotted time.
-6. Reflect on your own teaching and give and receive constructive feedback.

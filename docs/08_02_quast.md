@@ -12,15 +12,14 @@ permalink: /quast/
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this practical, you should be able to:
-
-- run QUAST on a Flye assembly
-- locate the main QUAST reports
-- interpret basic assembly metrics
-- compare assemblies using the same settings
-- recognize limitations of reference-free assembly QC
+{: .objectives }
+> By the end of this practical, you should be able to:
+> 
+> - run QUAST on a Flye assembly
+> - locate the main QUAST reports
+> - interpret basic assembly metrics
+> - compare assemblies using the same settings
+> - recognize limitations of reference-free assembly QC
 
 ---
 

@@ -13,15 +13,14 @@ Good project organisation makes bioinformatics analyses easier to understand, re
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this lesson, you should be able to:
-
-- organise a bioinformatics project using a consistent directory structure
-- use clear and machine-readable file names
-- separate raw data, scripts, intermediate files, and final results
-- record software environments, versions, commands, and parameters
-- reduce unnecessary storage use without losing important information
+{: .objectives }
+> By the end of this lesson, you should be able to:
+>
+> - organise a bioinformatics project using a consistent directory structure
+> - use clear and machine-readable file names
+> - separate raw data, scripts, intermediate files, and final results
+> - record software environments, versions, commands, and parameters
+> - reduce unnecessary storage use without losing important information
 
 ---
 
