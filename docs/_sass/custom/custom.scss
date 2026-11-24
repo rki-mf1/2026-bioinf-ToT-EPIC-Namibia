@@ -5,11 +5,15 @@
   border-left: $border-radius solid $accent-color;
 }
 
-// Note and question
+// Note, content, and question
 .main-content p.note,
 .main-content blockquote.note,
 .main-content p.note-title,
 .main-content blockquote.note-title,
+.main-content p.content,
+.main-content blockquote.content,
+.main-content p.content-title,
+.main-content blockquote.content-title,
 .main-content p.question,
 .main-content blockquote.question,
 .main-content p.question-title,
@@ -29,11 +33,15 @@
   @include filled-callout($green-000, $green-300, 0.20);
 }
 
-// Important and discussion
+// Important, objectives, and discussion
 .main-content p.important,
 .main-content blockquote.important,
 .main-content p.important-title,
 .main-content blockquote.important-title,
+.main-content p.objectives,
+.main-content blockquote.objectives,
+.main-content p.objectives-title,
+.main-content blockquote.objectives-title,
 .main-content p.discussion,
 .main-content blockquote.discussion,
 .main-content p.discussion-title,

@@ -13,19 +13,18 @@ permalink: /linux/
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of the Linux module, you should be able to:
-
-- use the terminal and understand your current working directory
-- navigate the filesystem using absolute and relative paths
-- interpret special path symbols such as `~`, `.`, and `..`
-- create, inspect, edit, copy, move, rename, and remove files and directories
-- find help for commands using man and --help
-- search text using `grep`
-- combine commands using pipes (`|`)
-- extract selected columns from tabular files
-- write and execute simple Bash scripts
+{: .objectives }
+> By the end of the Linux module, you should be able to:
+>
+> - use the terminal and understand your current working directory
+> - navigate the filesystem using absolute and relative paths
+> - interpret special path symbols such as `~`, `.`, and `..`
+> - create, inspect, edit, copy, move, rename, and remove files and directories
+> - look up command options using `man` or `--help`
+> - search text using `grep`
+> - combine commands using pipes (`|`)
+> - extract selected columns from tabular files
+> - write and execute simple Bash scripts
 
 ---
 
@@ -94,7 +93,7 @@ The prompt commonly contains:
 - `@`               → Separates the username and computer name
 - `workstation`     → Name of the computer or server
 - `:`               → Separates the computer name and current directory
-- `~/direcotory`    → Current working directory
+- `~/directory`    → Current working directory
 - `$`               → Indicates that the shell is ready for a command
 
 The exact appearance of the prompt may differ between computers. For those who are curious, you can [customize your bash prompt](https://www.howtogeek.com/307701/how-to-customize-and-colorize-your-bash-prompt/) by changing the color and information contained in it.

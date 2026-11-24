@@ -10,11 +10,12 @@ permalink: /linux_scripts/
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this lesson, you should be able to:
-
-- write and run Bash scripts
+{: .objectives }
+> By the end of this lesson, you should be able to:
+>
+> - write a Bash script with a shebang and shell commands
+> - pass values to a script using positional arguments such as `$1` and `$2`
+> - make a script executable and run it with `bash` or `./`
 
 --- 
 
@@ -122,3 +123,6 @@ ls demo_project
 | `chmod +x` | Make a file executable |
 | `bash script.sh` | Run a script with Bash |
 | `./script.sh` | Run an executable script directly |
+| `#!/bin/bash` | Tell the system to interpret the script with Bash |
+| `$1`, `$2` | Access the first and second script arguments |
+| `mkdir -p` | Create directories, including parent directories |

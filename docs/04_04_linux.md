@@ -6,17 +6,18 @@ nav_exclude: false
 permalink: /linux_files/
 ---
 
-# Viewing, Editing, Compressing, and Searching Files
+# Viewing, Compressing, and Searching Files
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this lesson, you should be able to:
-
-- search text with `grep`
-- combine commands using pipes (`|`)
-- extract columns from tabular files
+{: .objectives }
+> By the end of this lesson, you should be able to:
+>
+> - view plain-text and compressed files from the command line
+> - compress and decompress files using `gzip` and `gunzip`
+> - search text in plain and compressed files with `grep` and `zgrep`
+> - combine commands using pipes (`|`)
+> - extract, sort, and count values in tabular files with `cut`, `sort`, `uniq`, and `wc`
 
 --- 
 
@@ -36,11 +37,11 @@ mkdir -p scratch
 
 ---
 
-## 2. Compression with `gzip`
+## 1. Compression with `gzip`
 
 Genomics files are often very large, frequently reaching several gigabytes. To reduce storage requirements, they are commonly compressed with `gzip`. Although these files contain binary data and cannot be read directly with standard text tools, you can still inspect them from the command line without decompressing them first.
 
-First, let’s try seeing `.gz` file using `head` command.
+First, let’s try viewing a `.gz` file using `head` command.
 
 ```bash
 head data/tutorial_data/ERR16718636.fna.gz
@@ -52,7 +53,7 @@ head data/tutorial_data/ERR16718636.fna.gz
 zcat data/tutorial_data/ERR16718636.fna.gz | head
 ```
 
-Let's copy it in scratch directory, and then uncompress it:
+Let's copy it to the scratch directory, and then uncompress it:
 
 ```bash
 cp data/tutorial_data/ERR16718636.fna.gz scratch/ 
@@ -67,7 +68,7 @@ rm ERR16718636.fna.gz
 ls -lh 
 ```
 
-To compress file:
+To compress the file:
 
 ```bash
 gzip ERR16718636.fna
@@ -81,7 +82,7 @@ ls -lh
 
 ---
 
-## 3. Inspect compressed files without unpacking them
+## 2. Inspect compressed files without unpacking them
 
 Try and compare these commands:
 
@@ -111,7 +112,7 @@ zless ERR16718636.fna.gz
 
 ---
 
-## 4. Search text with `grep`
+## 3. Search text with `grep`
 
 Let's copy `amrfinderplus.tsv` in our current working directory to explore it:
 
@@ -153,7 +154,7 @@ zgrep "^>" ERR16718636.fna.gz
 
 ---
 
-## 5. Pipes
+## 4. Pipes
 
 A pipe sends the output of one command into the next command.
 
@@ -181,7 +182,7 @@ grep "OXA" amrfinderplus.tsv | head
 
 ---
 
-## 6. Work with tabular data from the command line
+## 5. Work with tabular data from the command line
 
 
 ### Extract columns with `cut`
@@ -245,4 +246,4 @@ wc -w amrfinderplus.tsv
 | `cut` | Extract selected columns |
 | `sort` | Sort lines |
 | `uniq` | Remove consecutive duplicates |
-| `wc` | Count lines, words, or characters |
+| `wc` | Count lines, words, and bytes |

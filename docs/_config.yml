@@ -42,31 +42,30 @@ callouts:
   note:
     title: "ℹ️ Note"
     color: blue
-
+  content:
+    title: "⫶☰ Content"
+    color: blue
   tip:
     title: "💡 Tip"
     color: green
-
+  objectives:
+    title: "🎯 Learning objectives"
+    color: purple
   important:
     title: "❗ Important"
     color: purple
-
   warning:
     title: "⚠️ Warning"
     color: yellow
-
   caution:
     title: "🛑 Caution"
     color: red
-
   question:
     title: "❓ Question"
     color: blue
-
   task:
     title: "✅ Task"
     color: green
-
   discussion:
     title: "💬 Discussion"
     color: purple

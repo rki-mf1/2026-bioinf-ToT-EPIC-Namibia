@@ -24,6 +24,18 @@ Please bring your own laptop.
 
 ---
 
+{: .objectives }
+> At the end of this training and through active participation, trainees will be able to
+> 1.	Apply combined competence in sequence data analysis and Accelerated Learning to design and deliver learner-centered training sessions.
+> 2.	Run bioinformatics tools to quality control and reconstruct selected bacterial genomes from realistic toy sequencing data.
+> 3.	Explain key bioinformatics concepts of pathogen genome reconstruction at a conceptual level.
+> 4.	Apply six core learning principles that will enhance learner attention, engagement and retention.
+> 5.	Select from a set of teaching activities to deliver collaborative, interactive and memorable learning sessions.
+> 6.	Integrate supporting resources, such as Large Language Models (LLMs), to advance and sustain their continuous learning in bioinformatics.
+
+
+---
+
 ## 💭 Workshop content
 
 The curriculum covers three interlinked domains: 
@@ -42,19 +54,6 @@ Main topics include:
 - De novo genome assembly
 - Assembly quality control
  
----
-
-## 🎯 Learning objectives
-
-At the end of this training and through active participation, trainees will be able to
-1.	Apply combined competence in sequence data analysis and Accelerated Learning to design and deliver learner-centered training sessions.
-2.	Run bioinformatics tools to quality control and reconstruct selected bacterial genomes from realistic toy sequencing data.
-3.	Explain key bioinformatics concepts of pathogen genome reconstruction at a conceptual level.
-4.	Apply six core learning principles that will enhance learner attention, engagement and retention.
-5.	Select from a set of teaching activities to deliver collaborative, interactive and memorable learning sessions.
-6.	Integrate supporting resources, such as Large Language Models (LLMs), to advance and sustain their continuous learning in bioinformatics.
-
-
 ---
 
 ## ⏱️ Preparations

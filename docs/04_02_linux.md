@@ -10,12 +10,11 @@ permalink: /linux_navigation/
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this lesson, you should be able to:
-
-- Describe the file system tree and distinguish absolute from relative paths
-- Navigate the file system using `cd`, `pwd` and `ls`, using both absolute and relative paths
+{: .objectives }
+> By the end of this lesson, you should be able to:
+>
+> - Describe the file system tree and distinguish absolute from relative paths
+> - Navigate the file system using `cd`, `pwd` and `ls`, using both absolute and relative paths
 
 
 {: .note}
@@ -365,9 +364,19 @@ Three levels up (`kp_ont` → `raw_data` → `data` → workshop folder), then i
 
 ## 📌 Summary
 
-| Command | Purpose |
+| Concept or command | Meaning |
 | --- | --- |
-| `cd` | Change directory |
+| `pwd` | Show the current directory |
+| `ls <PATH>` | List files and folders at a path |
+| Absolute path | Starts at the filesystem root (`/`) |
+| Relative path | Starts at the current directory (`.`) |
+| `~` | Home directory |
+| `.` | Current directory |
+| `..` | Parent directory |
+| `cd <PATH>` | Change directory |
 | `cd ~` | Go to your home directory |
+| `cd` withoth <PATH> | Go to your home directory (same as `cd ~`) |
 | `cd ..` | Go to the parent directory |
 | `cd -` | Go back to the previous directory |
+| `cd` or `cd ~` | Go to the home directory |
+| `cd -` | Return to the previous directory |

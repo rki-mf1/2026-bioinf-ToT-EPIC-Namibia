@@ -10,14 +10,13 @@ permalink: /linux_first_commands/
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this lesson, you should be able to:
-
-- Identify the parts of the shell prompt: `user`, `host`, current directory, and `$`
-- Identify the command, option(s) and argument(s) in a given shell command
-- Run `pwd` and `ls` to check your location in the file system
-- Look up command options with `--help` or `man` to find what an unfamiliar option does
+{: .objectives }
+> By the end of this lesson, you should be able to:
+>
+> - Identify the parts of the shell prompt: `user`, `host`, current directory, and `$`
+> - Identify the command, option(s) and argument(s) in a given shell command
+> - Run `pwd` and `ls` to check your location in the file system
+> - Look up command options with `--help` or `man` to find what an unfamiliar option does
 
 ---
 

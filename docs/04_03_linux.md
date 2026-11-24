@@ -10,13 +10,12 @@ permalink: /linux_file_management/
 
 ---
 
-## 🎯 Learning objectives
-
-By the end of this lesson, you should be able to:
-
-- Create, copy, move, rename, and remove files and directories
-- Write text to files with `echo`, `>` and `>>`, and edit files with `nano`
-- View file contents with `cat`, `head`, `tail`, and `less`
+{: .objectives }
+> By the end of this lesson, you should be able to:
+>
+> - Create, copy, move, rename, and remove files and directories
+> - Write text to files with `echo`, `>` and `>>`, and edit files with `nano`
+> - View file contents with `cat`, `head`, `tail`, and `less`
 
 {: .note}
 This lesson builds on [Navigation](04_02_linux.md).
@@ -285,5 +284,5 @@ head readme.txt
 | `rm -r` | Remove directories recursively |
 | `cat` | Print a file |
 | `less` | View a file page by page |
-| `head` | Show first lines |
-| `tail` | Show last lines |
+| `head` | Show the first 10 lines by default |
+| `tail` | Show the last 10 lines by default |
