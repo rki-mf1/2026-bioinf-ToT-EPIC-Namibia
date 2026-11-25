@@ -17,7 +17,9 @@ permalink: /conda/
 > - list available Conda environments
 > - create a new Conda environment
 > - activate and deactivate Conda environments
-> - check which software is available inside an environment
+> - check which software and versions are available inside an environment
+> - export a Conda environment to a YAML file for sharing
+> - create a Conda environment from a YAML file and give it a custom name
 > - understand why a tool may not be available before activating the correct environment
 
 ---
@@ -58,13 +60,13 @@ base                  *  /home/user/miniforge3
 Now we can create the environment.
 
 ```bash
-conda create -n fastp -c bioconda fastp
+conda create -n fastp -c conda-forge -c bioconda fastp
 ```
 
 Here, we use two important parameters:
 
 - `-n fastp` gives the new environment the name **fastp**
-- `-c bioconda` specifies channel from which to install fastp
+- `-c conda-forge -c bioconda` specifies channel from which to install fastp
 
 ---
 
@@ -85,7 +87,7 @@ You should now see an environment called **fastp**.
 
 The `conda activate` command lets you switch to a specific environment. 
 You can use any of the environments that were listed in the output of `conda env list` command. 
-Once you activate a environment you will be able to use the software that is installed in that environment.
+Once you activate an environment you will be able to use the software that is installed in that environment.
 
 Before activating the environment, let’s try running fastp.
 
@@ -98,6 +100,7 @@ You may see an error message similar to this:
 ```bash
 Command 'fastp' not found
 ```
+
 This is expected.
 
 The software was installed inside the fastp Conda environment, but that environment is not active yet.
@@ -156,6 +159,59 @@ When you are finished using an environment, you can deactivate it.
 conda deactivate
 ```
 
+---
+
+## 9. Export the environment so it can be shared
+
+Export the environment to a YAML file so that you can share it with colleagues. Using this file they can recreate the environment and its package versions.
+
+```bash
+conda env export -n fastp -f fastp.yml --no-builds
+```
+
+{: .note }
+> `--no-builds` avoids recording platform-specific build strings, which can make the file easier to use on another computer.
+> Conda may still include platform-specific packages, so recreation on a different operating system is not always guaranteed to be identical.
+
+---
+
+## 10. Create an environment from a YAML file
+
+To create an environment from an `environment.yml` file, run:
+
+```bash
+conda env create -f environment.yml
+```
+
+{: .note }
+> You can specify `-n` when creating the environment from a YAML file to define the environment’s name.
+> If you omit `-n`, Conda uses the name in the YAML file.
+> If the YAML file does not specify a name, you should provide it with `-n`
+
+Now, for the sake of practicing, let's create new environment using YAML file:
+
+```bash
+conda env create -f fastp.yml -n fastp_from_yml
+```
+
+---
+
+## 11. Remove newly created environment
+
+After checking that the environment created from the YAML file works correctly, you can delete it. 
+
+```bash
+conda activate fastp_from_yml
+
+fastp --help
+
+conda deactivate
+
+conda env remove -n fastp_from_yml
+```
+
+---
+
 {: .discussion}
 > Try to answer the following questions:
 >
@@ -173,7 +229,10 @@ In this practical, you used the following Conda commands:
 | Command | Purpose |
 |---|---|
 | `conda env list` | List available Conda environments |
-| `conda create -n fastp -c bioconda fastp` | Create a new environment |
+| `conda create -n fastp -c conda-forge -c bioconda fastp` | Create a new environment with fastp |
 | `conda activate fastp` | Activate the `fastp` environment |
-| `conda list` | List installed packages in the active environment |
-| `conda deactivate` | Leave the active environment |
+| `conda list` | List packages installed in the active environment |
+| `conda env export -n fastp -f fastp.yml --no-builds` | Export the `fastp` environment to a YAML file |
+| `conda env create -f fastp.yml -n fastp_from_yml` | Create an environment from a YAML file with a specified name |
+| `conda deactivate` | Deactivate the environment |
+| `conda env remove -n fastp_from_yml` | Remove the environment |
