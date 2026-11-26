@@ -76,7 +76,7 @@ touch README.md
 echo "Klebsiella pneumoniae project, Windhoek 2026" > README.md
 
 # 6.
-echo "Author: Ziska" >> README.md
+echo "Author: Franziska" >> README.md
 
 # 7.
 nano README.md
@@ -109,7 +109,7 @@ You received the compressed genome assembly `ERR16718636.fna.gz` and two tables.
 4. show the first 3 lines of the assembly **without** uncompressing it
 5. count the contigs in the assembly (each contig starts with a header line beginning with `>`)
 6. show the header lines of the **first five** contigs
-7. browse the compressed assembly page by page, search for `ERR16718636_00044`, and quit
+7. browse the compressed assembly page by page and quit
 8. uncompress the assembly but **keep** the compressed file, then compare both sizes
 9. remove the uncompressed file again
 10. write the number of contigs into `README.md` as a new line, e.g. `Contigs: 44`
@@ -179,7 +179,7 @@ zgrep "^>" data/ERR16718636.fna.gz | cut -d " " -f 2 | head -n 5
 
 ## 3. Mini challenge: Write an AMR summary
 
-Your colleague ran AMRFinderPlus on all eight samples. Answer the questions below from the command line and collect the results in `results/amr_summary.txt`.
+Your colleague ran AMRFinderPlus on all samples. Answer the questions below from the command line and collect the results in `results/amr_summary.txt`.
 
 1. show the header line of `data/metadata/samplesheet.tsv` and count how many samples it contains (the header does not count)
 2. check that all samples belong to the same species
@@ -253,5 +253,4 @@ In step 8, the header `Name` appears with count 1. Bonus: find a way to leave it
 </details>
 
 {: .discussion}
-> - In the lesson you searched for `OXA`. Compare `grep "OXA" data/amrfinderplus.tsv | cut -f 7 | sort | uniq` with your result from step 7. Why is searching for a gene family name not the same as searching for a resistance class?
 > - In step 6, what happens if you leave out `sort` before `uniq`?
