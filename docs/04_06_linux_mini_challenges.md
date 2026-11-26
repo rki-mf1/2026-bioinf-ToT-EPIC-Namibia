@@ -1,5 +1,5 @@
 ---
-title: Linux - Mini Challenges
+title: Mini Challenges
 parent: Linux
 nav_order: 6
 nav_exclude: false
