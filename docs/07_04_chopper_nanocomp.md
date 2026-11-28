@@ -1,6 +1,6 @@
 ---
 title: "Chopper and NanoComp"
-parent: QC and Preprocessing of Raw Sequencing Data
+parent: Read QC and Filtering
 nav_order: 4
 nav_exclude: false
 permalink: /chopper_nanocomp/
