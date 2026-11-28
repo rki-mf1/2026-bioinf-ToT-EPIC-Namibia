@@ -1,5 +1,5 @@
 ---
-title: QC and Preprocessing of Raw Sequencing Data
+title: Read QC and Filtering
 nav_order: 7
 nav_exclude: false
 has_children: true
