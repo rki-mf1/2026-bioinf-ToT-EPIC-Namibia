@@ -30,8 +30,7 @@ Compared with `fastplong`, the work is split between two tools: `chopper`
 filters, `NanoComp` reports. `chopper` does not trim adapters or split
 chimeric reads.
 
-We use the same R10.4.1 *Klebsiella pneumoniae* sample as in the `fastplong`
-tutorial: `AR-1049-GC`.
+We use R10.4.1 *Klebsiella pneumoniae* toy samples in this tutorial. 
 
 ---
 
