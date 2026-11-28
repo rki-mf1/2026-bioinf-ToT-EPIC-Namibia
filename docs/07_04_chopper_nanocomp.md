@@ -6,13 +6,8 @@ nav_exclude: false
 permalink: /chopper_nanocomp/
 ---
 
-# Extra: Filtering ONT reads with `chopper` and comparing them with `NanoComp`
+# Filtering ONT reads with `chopper` and comparing them with `NanoComp`
 
-
-{: .note }
-This is an optional extra tutorial. It repeats the filtering experiment from
-the [`fastplong` tutorial](../fastplong/) with two tools from the NanoPack
-suite. Complete the `fastplong` tutorial first.
 
 {: .objectives }
 > By the end of this practical, you should be able to:
