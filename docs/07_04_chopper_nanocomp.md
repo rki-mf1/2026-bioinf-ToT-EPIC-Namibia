@@ -370,31 +370,8 @@ Open the HTML report in `nanocomp/all_conditions/` and `NanoStats.txt`.
 
 ---
 
-## 7. Compare with `fastplong`
-
-Put your `chopper` results next to your `fastplong` results.
-
-1. Do the length filters (min 1,000, 5,000 and 10,000 bp) give similar
-   results in both tools? Why would you expect that?
-2. `fastplong --mean_qual 30` removed only a few percent of reads. What does
-   `chopper --quality 20` remove? Why can't you compare the Q values of the
-   two tools directly?
-3. `fastplong` trimmed adapters and split chimeric reads by default. What
-   happens to those reads in the `chopper` output?
-4. Which workflow would you choose for your own data, and why?
-
-{: .note }
-`chopper` and `NanoComp` calculate mean read quality from the error
-probabilities of all bases. This gives lower values than averaging the Phred
-scores directly. The same threshold, for example Q20, is therefore stricter in
-`chopper` than in `fastplong`.
-
----
-
 ## 📌 Summary
 
 In this extra practical, you filtered long reads with `chopper` and compared
 the results with `NanoComp`.
 
-Different tools can apply the "same" threshold in different ways. Always check
-how a tool calculates its metrics before comparing results across tools.
