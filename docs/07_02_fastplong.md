@@ -1,6 +1,6 @@
 ---
 title: Fastplong
-parent: QC and Preprocessing of Raw Sequencing Data
+parent: Read QC and Filtering
 nav_order: 2
 nav_exclude: false
 permalink: /fastplong/
