@@ -14,8 +14,6 @@ permalink: /chopper_nanocomp/
 > 
 > - filter Oxford Nanopore reads by length and mean quality with `chopper`
 > - compare raw and filtered datasets with `NanoComp`
-> - explain why the same quality threshold gives different results in
->   `chopper` and `fastplong`
 
 ---
 
