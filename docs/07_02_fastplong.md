@@ -12,11 +12,7 @@ permalink: /fastplong/
 {: .objectives }
 > By the end of this practical, you should be able to:
 > 
-> - explain why read quality control is important before downstream analysis
-> - run `fastplong` on Oxford Nanopore FASTQ files
-> - generate filtered FASTQ, HTML, and JSON output files
-> - filter reads by minimum length
-> - filter reads by mean read quality
+> - run `fastplong` on Oxford Nanopore FASTQ files to generate filtered FASTQ, HTML, and JSON output files
 > - compare quality-control results generated with different parameters
 > - interpret the effect of filtering on read retention, read length, and quality
 
